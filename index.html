@@ -15,6 +15,20 @@
     
     <meta name="description" content="Baba Bima Insurance provides comprehensive insurance solutions for individuals and businesses in Kenya. Get affordable Property, Motor, Life, and Business insurance today.">
     
+    <!-- ===== SOCIAL MEDIA / OPEN GRAPH TAGS ===== -->
+    <meta property="og:title" content="Baba Bima Insurance | Trusted Insurance Solutions Kenya">
+    <meta property="og:description" content="Comprehensive insurance solutions for individuals and businesses in Kenya. Get affordable Property, Motor, Life, and Business insurance today.">
+    <meta property="og:image" content="https://www.bababima.co.ke/bima.logo.png">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="600">
+    <meta property="og:url" content="https://www.bababima.co.ke">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Baba Bima Insurance">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Baba Bima Insurance">
+    <meta name="twitter:description" content="Trusted Insurance Solutions Kenya">
+    <meta name="twitter:image" content="https://www.bababima.co.ke/bima.logo.png">
+    
     <!-- Favicon & App Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -30,20 +44,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-
-    <!-- ===== SOCIAL MEDIA / OPEN GRAPH TAGS ===== -->
-<meta property="og:title" content="Baba Bima Insurance | Trusted Insurance Solutions Kenya">
-<meta property="og:description" content="Comprehensive insurance solutions for individuals and businesses in Kenya. Get affordable Property, Motor, Life, and Business insurance today.">
-<meta property="og:image" content="https://www.bababima.co.ke/bima.logo.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:url" content="https://www.bababima.co.ke">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Baba Bima Insurance">
-<meta name="twitter:description" content="Trusted Insurance Solutions Kenya">
-<meta name="twitter:image" content="https://www.bababima.co.ke/bima.logo.png">
     
     <style>
         /* 
@@ -137,25 +137,26 @@
             text-decoration: none;
         }
 
+        /* LOGO CONTAINER - FIXED FOR PROPER DISPLAY */
         .logo-icon {
-            width: 50px;
-            height: 50px;
+            width: 70px; /* Increased for better visibility */
+            height: 70px; /* Square container for logo */
             background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--accent-gold);
-            font-size: 1.8rem;
-            font-weight: 700;
             box-shadow: var(--shadow-md);
             overflow: hidden;
+            flex-shrink: 0;
+            padding: 8px; /* Added padding so logo doesn't touch edges */
         }
 
+        /* LOGO IMAGE STYLING - FIXED FOR NO DISTORTION */
         .logo-icon img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: contain; /* CRITICAL: Prevents distortion */
             display: block;
         }
 
@@ -992,9 +993,8 @@
         }
 
         .footer-logo .logo-icon {
-            width: 50px;
-            height: 50px;
-            font-size: 1.5rem;
+            width: 70px;
+            height: 70px;
             background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
             border-radius: 12px;
             display: flex;
@@ -1002,6 +1002,8 @@
             justify-content: center;
             box-shadow: var(--shadow-md);
             overflow: hidden;
+            flex-shrink: 0;
+            padding: 8px;
         }
 
         .footer-logo .logo-icon img {
@@ -1098,6 +1100,18 @@
             }
         }
 
+        @media (max-width: 992px) {
+            .logo-icon {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .footer-logo .logo-icon {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.3rem;
@@ -1180,6 +1194,20 @@
             .contact {
                 padding-bottom: 100px;
             }
+            
+            .logo-icon {
+                width: 55px;
+                height: 55px;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.3rem;
+            }
+            
+            .footer-logo .logo-icon {
+                width: 55px;
+                height: 55px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1227,6 +1255,20 @@
             .contact {
                 padding-bottom: 120px;
             }
+            
+            .logo-icon {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.2rem;
+            }
+            
+            .footer-logo .logo-icon {
+                width: 50px;
+                height: 50px;
+            }
         }
     </style>
 </head>
@@ -1236,7 +1278,7 @@
         <div class="container nav-container">
             <a href="#home" class="logo" itemprop="url">
                 <div class="logo-icon" itemprop="logo">
-                    <!-- Logo will be added as background image via CSS or uploaded separately -->
+                    <img src="bima.logo.png" alt="Baba Bima Insurance Logo" loading="eager">
                 </div>
                 <div class="logo-text">
                     <h1 itemprop="name">BABA BIMA INSURANCE</h1>
@@ -1942,7 +1984,7 @@
                 <div class="footer-column">
                     <div class="footer-logo">
                         <div class="logo-icon">
-                            <!-- Logo will be added as background image via CSS or uploaded separately -->
+                            <img src="bima.logo.png" alt="Baba Bima Insurance Logo" loading="eager">
                         </div>
                         <h3>Baba Bima Insurance</h3>
                     </div>
@@ -2001,60 +2043,11 @@
             setupEventListeners();
             setupSmoothScrolling();
             setupCategoryNavigation();
-            
-            // Add logo images if you have them uploaded
-            addLogoImages();
         }
 
-        // Function to add logo images
-        function addLogoImages() {
-            // Check if logo files exist, then add them
-            const headerLogo = document.querySelector('.logo .logo-icon');
-            const footerLogo = document.querySelector('.footer-logo .logo-icon');
-            
-            // Try to add logo image if it exists
-            const logoImage = new Image();
-            logoImage.onload = function() {
-                // Create image element for header logo
-                const headerImg = document.createElement('img');
-                headerImg.src = 'favicon-32x32.png'; // Using favicon as logo
-                headerImg.alt = 'Baba Bima Insurance Logo';
-                headerImg.style.width = '100%';
-                headerImg.style.height = '100%';
-                headerImg.style.objectFit = 'contain';
-                headerImg.style.display = 'block';
-                
-                // Clear existing content and add image
-                headerLogo.innerHTML = '';
-                headerLogo.appendChild(headerImg);
-                
-                // Create image element for footer logo
-                const footerImg = document.createElement('img');
-                footerImg.src = 'favicon-32x32.png'; // Using favicon as logo
-                footerImg.alt = 'Baba Bima Insurance Logo';
-                footerImg.style.width = '100%';
-                footerImg.style.height = '100%';
-                footerImg.style.objectFit = 'contain';
-                footerImg.style.display = 'block';
-                
-                // Clear existing content and add image
-                footerLogo.innerHTML = '';
-                footerLogo.appendChild(footerImg);
-            };
-            
-            // If logo doesn't exist, use fallback
-            logoImage.onerror = function() {
-                headerLogo.innerHTML = 'BB';
-                footerLogo.innerHTML = 'BB';
-            };
-            
-            // Try to load the logo
-            logoImage.src = 'favicon-32x32.png';
-        }
-
-        // Setup event listeners - FIXED: Simplified mobile menu toggle
+        // Setup event listeners
         function setupEventListeners() {
-            // Mobile menu toggle - FIXED: Clean and working mobile menu
+            // Mobile menu toggle
             mobileMenuBtn.addEventListener('click', toggleMobileMenu);
             
             // Close mobile menu when clicking on a link
@@ -2218,4 +2211,3 @@
     </script>
 </body>
 </html>
-
