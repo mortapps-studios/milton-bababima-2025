@@ -15,6 +15,17 @@
     
     <meta name="description" content="Baba Bima Insurance provides comprehensive insurance solutions for individuals and businesses in Kenya. Get affordable Property, Motor, Life, and Business insurance today.">
     
+    <!-- Favicon & App Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="msapplication-TileColor" content="#1E3A8A">
+    <meta name="theme-color" content="#1E3A8A">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -124,6 +135,14 @@
             font-size: 1.8rem;
             font-weight: 700;
             box-shadow: var(--shadow-md);
+            overflow: hidden;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
         }
 
         .logo-text {
@@ -962,6 +981,20 @@
             width: 50px;
             height: 50px;
             font-size: 1.5rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+        }
+
+        .footer-logo .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
         }
 
         .footer-logo h3 {
@@ -1188,7 +1221,9 @@
     <header itemscope itemtype="https://schema.org/InsuranceAgency">
         <div class="container nav-container">
             <a href="#home" class="logo" itemprop="url">
-                <div class="logo-icon" itemprop="logo">BB</div>
+                <div class="logo-icon" itemprop="logo">
+                    <!-- Logo will be added as background image via CSS or uploaded separately -->
+                </div>
                 <div class="logo-text">
                     <h1 itemprop="name">BABA BIMA INSURANCE</h1>
                     <span itemprop="description">Trusted Insurance Solutions</span>
@@ -1892,7 +1927,9 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <div class="logo-icon">BB</div>
+                        <div class="logo-icon">
+                            <!-- Logo will be added as background image via CSS or uploaded separately -->
+                        </div>
                         <h3>Baba Bima Insurance</h3>
                     </div>
                     <div class="footer-about">
@@ -1950,6 +1987,55 @@
             setupEventListeners();
             setupSmoothScrolling();
             setupCategoryNavigation();
+            
+            // Add logo images if you have them uploaded
+            addLogoImages();
+        }
+
+        // Function to add logo images
+        function addLogoImages() {
+            // Check if logo files exist, then add them
+            const headerLogo = document.querySelector('.logo .logo-icon');
+            const footerLogo = document.querySelector('.footer-logo .logo-icon');
+            
+            // Try to add logo image if it exists
+            const logoImage = new Image();
+            logoImage.onload = function() {
+                // Create image element for header logo
+                const headerImg = document.createElement('img');
+                headerImg.src = 'favicon-32x32.png'; // Using favicon as logo
+                headerImg.alt = 'Baba Bima Insurance Logo';
+                headerImg.style.width = '100%';
+                headerImg.style.height = '100%';
+                headerImg.style.objectFit = 'contain';
+                headerImg.style.display = 'block';
+                
+                // Clear existing content and add image
+                headerLogo.innerHTML = '';
+                headerLogo.appendChild(headerImg);
+                
+                // Create image element for footer logo
+                const footerImg = document.createElement('img');
+                footerImg.src = 'favicon-32x32.png'; // Using favicon as logo
+                footerImg.alt = 'Baba Bima Insurance Logo';
+                footerImg.style.width = '100%';
+                footerImg.style.height = '100%';
+                footerImg.style.objectFit = 'contain';
+                footerImg.style.display = 'block';
+                
+                // Clear existing content and add image
+                footerLogo.innerHTML = '';
+                footerLogo.appendChild(footerImg);
+            };
+            
+            // If logo doesn't exist, use fallback
+            logoImage.onerror = function() {
+                headerLogo.innerHTML = 'BB';
+                footerLogo.innerHTML = 'BB';
+            };
+            
+            // Try to load the logo
+            logoImage.src = 'favicon-32x32.png';
         }
 
         // Setup event listeners - FIXED: Simplified mobile menu toggle
