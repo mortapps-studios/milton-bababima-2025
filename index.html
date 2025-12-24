@@ -18,7 +18,7 @@
     <!-- ===== ENHANCED SOCIAL MEDIA / OPEN GRAPH TAGS WITH CACHE BUSTING ===== -->
     <meta property="og:title" content="Baba Bima Insurance | Trusted Insurance Solutions Kenya">
     <meta property="og:description" content="Comprehensive insurance solutions for individuals and businesses in Kenya. Get affordable Property, Motor, Life, and Business insurance today.">
-    <meta property="og:image" content="https://www.bababima.co.ke/bima.logo.png?v=2">
+    <meta property="og:image" content="https://www.bababima.co.ke/bima.logo.jpg?v=3">
     <meta property="og:image:width" content="600">
     <meta property="og:image:height" content="600">
     <meta property="og:image:alt" content="Baba Bima Insurance Logo - Trusted Insurance Solutions">
@@ -31,7 +31,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Baba Bima Insurance | Trusted Insurance Solutions Kenya">
     <meta name="twitter:description" content="Comprehensive insurance solutions for individuals and businesses in Kenya. Get affordable Property, Motor, Life, and Business insurance today.">
-    <meta name="twitter:image" content="https://www.bababima.co.ke/bima.logo.png?v=2">
+    <meta name="twitter:image" content="https://www.bababima.co.ke/bima.logo.jpg?v=3">
     <meta name="twitter:image:alt" content="Baba Bima Insurance Logo">
     <meta name="twitter:site" content="@BababimaKE">
     
@@ -1288,7 +1288,7 @@
         <div class="container nav-container">
             <a href="#home" class="logo" itemprop="url">
                 <div class="logo-icon" itemprop="logo">
-                    <img src="bima.logo.png" alt="Baba Bima Insurance Logo" loading="eager">
+                    <img src="bima.logo.jpg" alt="Baba Bima Insurance Logo" loading="eager">
                 </div>
                 <div class="logo-text">
                     <h1 itemprop="name">BABA BIMA INSURANCE</h1>
@@ -1319,7 +1319,7 @@
             <div class="hero-content">
                 <div class="hero-badge">
                     <i class="fas fa-shield-alt"></i>
-                    <span>Trusted Since 1990</span>
+                    <span>Trusted Since 1989</span>
                 </div>
                 <h1 class="hero-title">Protect What Matters Most <span>with Confidence & Care</span></h1>
                 <p class="hero-subtitle">
@@ -1994,7 +1994,7 @@
                 <div class="footer-column">
                     <div class="footer-logo">
                         <div class="logo-icon">
-                            <img src="bima.logo.png" alt="Baba Bima Insurance Logo" loading="eager">
+                            <img src="bima.logo.jpg" alt="Baba Bima Insurance Logo" loading="eager">
                         </div>
                         <h3>Baba Bima Insurance</h3>
                     </div>
@@ -2053,6 +2053,17 @@
             setupEventListeners();
             setupSmoothScrolling();
             setupCategoryNavigation();
+            
+            // Add cache busting for logo to prevent browser caching
+            const logoImages = document.querySelectorAll('img[src*="bima.logo"]');
+            const timestamp = new Date().getTime();
+            
+            logoImages.forEach(img => {
+                // Check if image already has query parameter
+                if (!img.src.includes('?')) {
+                    img.src = img.src + '?v=' + timestamp;
+                }
+            });
         }
 
         // Setup event listeners
@@ -2221,4 +2232,3 @@
     </script>
 </body>
 </html>
-
