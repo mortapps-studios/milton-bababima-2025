@@ -1536,24 +1536,39 @@
                         </div>
                     </div>
                     
-                    <!-- CHANGE 2: Updated from Additional Coverage (Always Included) -->
-                    <div class="inclusive-coverage">
-                        <h4>Additional Coverage (Inclusive)</h4>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="analyzerCriticalIllness" checked disabled>
-                            <label for="analyzerCriticalIllness" class="checkbox-label">
-                                <i class="fas fa-check-circle" style="color: var(--accent-green);"></i>
-                                Critical Illness Cover - Always Included
-                            </label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="analyzerAccidental" checked disabled>
-                            <label for="analyzerAccidental" class="checkbox-label">
-                                <i class="fas fa-check-circle" style="color: var(--accent-green);"></i>
-                                Accidental Death Benefit - Always Included
-                            </label>
-                        </div>
-                    </div>
+                    <!-- Additional Coverage (Inclusive) - NOW WITH 4 BENEFITS -->
+<div class="inclusive-coverage">
+    <h4>Additional Coverage (Inclusive)</h4>
+    <div class="checkbox-item">
+        <input type="checkbox" id="analyzerCriticalIllness" checked disabled>
+        <label for="analyzerCriticalIllness" class="checkbox-label">
+            <i class="fas fa-check-circle" style="color: var(--accent-green);"></i>
+            Critical Illness Cover
+        </label>
+    </div>
+    <div class="checkbox-item">
+        <input type="checkbox" id="analyzerPermanentDisability" checked disabled>
+        <label for="analyzerPermanentDisability" class="checkbox-label">
+            <i class="fas fa-check-circle" style="color: var(--accent-green);"></i>
+            Permanent Disability Benefit
+        </label>
+    </div>
+    <div class="checkbox-item">
+        <input type="checkbox" id="analyzerAccidentalDeath" checked disabled>
+        <label for="analyzerAccidentalDeath" class="checkbox-label">
+            <i class="fas fa-check-circle" style="color: var(--accent-green);"></i>
+            Accidental Death Benefit
+        </label>
+    </div>
+    <div class="checkbox-item">
+        <input type="checkbox" id="analyzerSevereDismemberment" checked disabled>
+        <label for="analyzerSevereDismemberment" class="checkbox-label">
+            <i class="fas fa-check-circle" style="color: var(--accent-green);"></i>
+            Severe Dismemberment Benefit
+        </label>
+    </div>
+</div>
+
                 </div>
                 
                 <!-- Step 3 -->
@@ -1808,7 +1823,7 @@
                     </div>
                     
                     <a href="https://miltonmuriithi.com" target="_blank" class="bababima-cta">
-                        <i class="fas fa-external-link-alt"></i> Learn More
+                        <i class="fas fa-external-link-alt"></i> Learn More About Our Team
                     </a>
                 </div>
             </div>
@@ -2315,7 +2330,9 @@
 *ADDITIONAL COVERAGE (INCLUSIVE)*
 ────────────────
 ✓ Critical Illness Cover
+✓ Permanent Disability Benefit
 ✓ Accidental Death Benefit
+✓ Severe Dismemberment Benefit
 
 *PREFERRED CONTACT METHOD*
 ────────────────
@@ -2332,6 +2349,8 @@ ${userData.analyzerContactMethod || 'WhatsApp'}
             
             window.open(whatsappURL, '_blank');
         }
+
+                
 
         // === ORIGINAL SITE FUNCTIONALITY ===
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -2424,4 +2443,3 @@ ${userData.analyzerContactMethod || 'WhatsApp'}
     </script>
 </body>
 </html>
-
