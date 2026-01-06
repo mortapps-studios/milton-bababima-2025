@@ -557,6 +557,71 @@
             box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
         }
 
+        /* Enhanced validation styles */
+        .validation-hint {
+            font-size: 0.8rem;
+            color: var(--neutral-gray);
+            margin-top: 5px;
+            display: block;
+        }
+
+        .valid-hint {
+            color: var(--accent-green) !important;
+            font-weight: 500;
+        }
+
+        .error-hint {
+            color: var(--accent-red) !important;
+            font-weight: 500;
+        }
+
+        .form-control.valid {
+            border-color: var(--accent-green);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310B981'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 20px;
+            padding-right: 45px;
+        }
+
+        .form-control.error {
+            border-color: var(--accent-red);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23EF4444'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 20px;
+            padding-right: 45px;
+        }
+
+        /* Update the error message styles */
+        .error-message {
+            color: var(--accent-red);
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+            font-weight: 500;
+        }
+
+        .error-message.valid {
+            color: var(--accent-green) !important;
+        }
+
+        /* Input validation styles */
+        .error-message {
+            color: var(--accent-red);
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .form-control.error {
+            border-color: var(--accent-red);
+        }
+
+        .form-control.valid {
+            border-color: var(--accent-green);
+        }
+
         /* Additional Coverage (Always Included) */
         .inclusive-coverage {
             background: rgba(16, 185, 129, 0.1);
@@ -647,6 +712,57 @@
         .btn-next:hover, .btn-calculate:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3);
+        }
+
+        /* === PDF BUTTON STYLES === */
+        .btn-pdf {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            padding: 16px 36px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            transition: var(--transition);
+        }
+
+        .btn-pdf:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(220, 38, 38, 0.3);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            padding: 16px 36px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            transition: var(--transition);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
         }
 
         /* ===== BABA BIMA SAVINGS PLAN SECTION ===== */
@@ -1146,6 +1262,22 @@
         }
         /* ======================================== */
 
+        /* === Data Privacy Notice === */
+        .data-privacy-notice {
+            background: rgba(30, 58, 138, 0.05);
+            border-left: 4px solid var(--primary-blue);
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--neutral-gray);
+            line-height: 1.6;
+        }
+
+        .data-privacy-notice strong {
+            color: var(--primary-dark);
+        }
+
         /* ===== FLOATING WHATSAPP ===== */
         .floating-whatsapp {
             position: fixed;
@@ -1266,6 +1398,15 @@
                 margin-top: 20px;
                 width: 100%;
                 text-align: center;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn-whatsapp, .btn-pdf {
+                width: 100%;
+                justify-content: center;
             }
         }
 
@@ -1574,20 +1715,45 @@
                     </div>
                 </div>
                 
-                <!-- Step 3 -->
+                <!-- Step 3 (UPDATED WITH ENHANCED VALIDATION) -->
                 <div class="analyzer-step" id="step3">
                     <h3 class="step-title">Contact Information</h3>
+                    <p style="text-align: center; color: var(--neutral-gray); margin-bottom: 30px; font-size: 1rem;">
+                        <i>We require valid contact information to provide you with accurate insurance quotes.</i>
+                    </p>
+                    
                     <div class="form-grid">
-                        <!-- Phone number is optional -->
+                        <!-- Phone number is NOW MANDATORY with enhanced validation -->
                         <div class="form-group">
-                            <label class="form-label">Phone Number (Optional)</label>
-                            <input type="tel" class="form-control" id="analyzerPhone" placeholder="e.g. 0712 345 678">
-                            <small style="color: var(--neutral-gray); display: block; margin-top: 5px;">Required for WhatsApp analysis</small>
+                            <label class="form-label">Phone Number <span style="color: var(--accent-red);">*</span></label>
+                            <input type="tel" class="form-control" id="analyzerPhone" 
+                                   placeholder="e.g. 0712 345 678 or +254712345678" 
+                                   required
+                                   pattern="^(\+254|0)[17]\d{8}$"
+                                   title="Enter a valid Kenyan mobile number">
+                            <div class="error-message" id="phoneError">
+                                Please enter a valid Kenyan phone number from Safaricom, Airtel, or Telkom
+                            </div>
+                            <div class="validation-hint" id="phoneHint">
+                                Format: 07XXXXXXXX or +2547XXXXXXXX
+                            </div>
                         </div>
                         
+                        <!-- Email address is NOW MANDATORY with enhanced validation -->
                         <div class="form-group">
-                            <label class="form-label">Email Address (Optional)</label>
-                            <input type="email" class="form-control" id="analyzerEmail" placeholder="your.email@example.com">
+                            <label class="form-label">Email Address <span style="color: var(--accent-red);">*</span></label>
+                            <input type="email" class="form-control" id="analyzerEmail" 
+                                   placeholder="your.real-email@example.com" 
+                                   required
+                                   pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                                   title="Enter a valid email address">
+                            <div class="error-message" id="emailError">
+                                Please enter a valid email address
+                            </div>
+                            <!-- REMOVED THE "We'll use this to send your insurance details" TEXT -->
+                            <div class="validation-hint" id="emailHint">
+                                Required for verification
+                            </div>
                         </div>
                         
                         <div class="form-group">
@@ -1599,19 +1765,39 @@
                             </select>
                         </div>
                     </div>
+                    
+                    <!-- Enhanced validation notice -->
+                    <div style="background: rgba(30, 58, 138, 0.05); padding: 15px; border-radius: 8px; margin-top: 20px; border-left: 3px solid var(--accent-gold);">
+                        <p style="color: var(--neutral-dark); font-size: 0.9rem; margin: 0;">
+                            <strong>Note:</strong> We verify all contact information to ensure accurate service. 
+                            Fake or temporary contact details will prevent you from receiving your insurance analysis.
+                        </p>
+                    </div>
                 </div>
                 
-                <!-- Results Section -->
+                <!-- Results Section (UPDATED WITH PDF BUTTON AND BACK BUTTON) -->
                 <div class="analyzer-step" id="results" style="display: none;">
                     <h3 class="step-title">Your Premium Analysis</h3>
                     <div id="analysisResults" style="background: var(--neutral-light); padding: 30px; border-radius: var(--border-radius);">
                         <p>Your analysis will appear here...</p>
                     </div>
                     
-                    <div style="text-align: center; margin-top: 30px;">
-                        <a href="#" class="product-cta" id="whatsappResults" style="margin: 0 auto;">
+                    <!-- Data Privacy Notice -->
+                    <div class="data-privacy-notice">
+                        <strong>Data Privacy Notice:</strong> Your information is used solely to generate this insurance analysis. We do not store, sell, or share your personal data with third parties. All calculations are performed locally on your device for your privacy and security.
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="btn-whatsapp" id="whatsappResults">
                             <i class="fab fa-whatsapp"></i> Send Analysis via WhatsApp
-                        </a>
+                        </button>
+                        <button class="btn-pdf" id="pdfDownloadBtn">
+                            <i class="fas fa-file-pdf"></i> Download PDF Report
+                        </button>
+                        <!-- Back to Calculator Button -->
+                        <button class="btn-calculator btn-prev" id="backToCalculatorBtn">
+                            <i class="fas fa-chevron-left"></i> Back to Calculator
+                        </button>
                     </div>
                 </div>
                 
@@ -1977,308 +2163,600 @@
         <link rel="mortapps-portfolio" href="https://mortappsstudios.com/portfolio/bababima">
     </div>
 
-    <script>
-        // === PREMIUM ANALYZER FUNCTIONALITY ===
-        let currentStep = 1;
-        const totalSteps = 3;
-        let userData = {};
+    <!-- PDF Library (ADDED FOR PDF FEATURE) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-        // CORRECTED Premium data from Excel file (10-year payment period) - EXACT VALUES ONLY
-        const premiumData = {
-            18: {2000000: 3395, 3000000: 4117, 4000000: 4914, 5000000: 5800, 6000000: 6488, 7000000: 7217, 8000000: 7991, 9000000: 8815, 10000000: 9692},
-            19: {2000000: 3395, 3000000: 4117, 4000000: 4914, 5000000: 5800, 6000000: 6488, 7000000: 7217, 8000000: 7991, 9000000: 8815, 10000000: 9692},
-            20: {2000000: 3395, 3000000: 4117, 4000000: 4914, 5000000: 5800, 6000000: 6488, 7000000: 7217, 8000000: 7991, 9000000: 8815, 10000000: 9692},
-            21: {2000000: 3395, 3000000: 4117, 4000000: 4914, 5000000: 5800, 6000000: 6488, 7000000: 7217, 8000000: 7991, 9000000: 8815, 10000000: 9692},
-            22: {2000000: 3425, 3000000: 4163, 4000000: 4981, 5000000: 5892, 6000000: 6597, 7000000: 7346, 8000000: 8142, 9000000: 8991, 10000000: 9897},
-            23: {2000000: 3455, 3000000: 4210, 4000000: 5049, 5000000: 5987, 6000000: 6709, 7000000: 7478, 8000000: 8297, 9000000: 9171, 10000000: 10107},
-            24: {2000000: 3486, 3000000: 4257, 4000000: 5118, 5000000: 6084, 6000000: 6824, 7000000: 7613, 8000000: 8456, 9000000: 9357, 10000000: 10324},
-            25: {2000000: 3520, 3000000: 4309, 4000000: 5193, 5000000: 6188, 6000000: 6947, 7000000: 7757, 8000000: 8623, 9000000: 9552, 10000000: 10550},
-            26: {2000000: 3534, 3000000: 4332, 4000000: 5229, 5000000: 6245, 6000000: 7013, 7000000: 7834, 8000000: 8715, 9000000: 9662, 10000000: 10682},
-            27: {2000000: 3569, 3000000: 4385, 4000000: 5307, 5000000: 6355, 6000000: 7142, 7000000: 7985, 8000000: 8892, 9000000: 9868, 10000000: 10922},
-            28: {2000000: 3604, 3000000: 4439, 4000000: 5386, 5000000: 6467, 6000000: 7274, 7000000: 8140, 8000000: 9073, 9000000: 10080, 10000000: 11168},
-            29: {2000000: 3619, 3000000: 4464, 4000000: 5427, 5000000: 6531, 6000000: 7348, 7000000: 8229, 8000000: 9180, 9000000: 10208, 10000000: 11322},
-            30: {2000000: 3655, 3000000: 4520, 4000000: 5509, 5000000: 6648, 6000000: 7487, 7000000: 8392, 8000000: 9371, 9000000: 10431, 10000000: 11583},
-            31: {2000000: 3722, 3000000: 4621, 4000000: 5656, 5000000: 6855, 6000000: 7729, 7000000: 8674, 8000000: 9699, 9000000: 10813, 10000000: 12025},
-            32: {2000000: 3791, 3000000: 4726, 4000000: 5809, 5000000: 7071, 6000000: 7981, 7000000: 8969, 8000000: 10043, 9000000: 11212, 10000000: 12489},
-            33: {2000000: 3861, 3000000: 4833, 4000000: 5966, 5000000: 7294, 6000000: 8244, 7000000: 9276, 8000000: 10401, 9000000: 11630, 10000000: 12975},
-            34: {2000000: 3933, 3000000: 4943, 4000000: 6128, 5000000: 7527, 6000000: 8517, 7000000: 9596, 8000000: 10776, 9000000: 12068, 10000000: 13485},
-            35: {2000000: 4006, 3000000: 5056, 4000000: 6296, 5000000: 7768, 6000000: 8801, 7000000: 9930, 8000000: 11167, 9000000: 12525, 10000000: 14020},
-            36: {2000000: 4081, 3000000: 5173, 4000000: 6469, 5000000: 8018, 6000000: 9096, 7000000: 10278, 8000000: 11576, 9000000: 13004, 10000000: 14580},
-            37: {2000000: 4218, 3000000: 5378, 4000000: 6764, 5000000: 8431, 6000000: 9579, 7000000: 10841, 8000000: 12229, 9000000: 13761, 10000000: 15454},
-            38: {2000000: 4359, 3000000: 5590, 4000000: 7070, 5000000: 8863, 6000000: 10086, 7000000: 11432, 8000000: 12917, 9000000: 14559, 10000000: 16378},
-            39: {2000000: 4504, 3000000: 5810, 4000000: 7389, 5000000: 9315, 6000000: 10617, 7000000: 12053, 8000000: 13641, 9000000: 15401, 10000000: 17355},
-            40: {2000000: 4673, 3000000: 6067, 4000000: 7761, 5000000: 9839, 6000000: 11235, 7000000: 12776, 8000000: 14484, 9000000: 16379, 10000000: 18487},
-            41: {2000000: 4826, 3000000: 6302, 4000000: 8107, 5000000: 10336, 6000000: 11820, 7000000: 13463, 8000000: 15287, 9000000: 17317, 10000000: 19579},
-            42: {2000000: 4984, 3000000: 6545, 4000000: 8467, 5000000: 10857, 6000000: 12434, 7000000: 14185, 8000000: 16134, 9000000: 18307, 10000000: 20734},
-            43: {2000000: 5210, 3000000: 6881, 4000000: 8951, 5000000: 11539, 6000000: 13234, 7000000: 15118, 8000000: 17217, 9000000: 19562, 10000000: 22185},
-            44: {2000000: 5444, 3000000: 7231, 4000000: 9458, 5000000: 12259, 6000000: 14078, 7000000: 16103, 8000000: 18363, 9000000: 20891, 10000000: 23725},
-            45: {2000000: 5685, 3000000: 7595, 4000000: 9988, 5000000: 13018, 6000000: 14969, 7000000: 17144, 8000000: 19576, 9000000: 22301, 10000000: 25360},
-            46: {2000000: 5956, 3000000: 8005, 4000000: 10585, 5000000: 13868, 6000000: 15969, 7000000: 18315, 8000000: 20940, 9000000: 23886, 10000000: 27198},
-            47: {2000000: 6216, 3000000: 8400, 4000000: 11167, 5000000: 14712, 6000000: 16962, 7000000: 19479, 8000000: 22301, 9000000: 25472, 10000000: 29044},
-            48: {2000000: 6505, 3000000: 8842, 4000000: 11819, 5000000: 15653, 6000000: 18072, 7000000: 20781, 8000000: 23823, 9000000: 27246, 10000000: 31108},
-            49: {2000000: 6886, 3000000: 9407, 4000000: 12633, 5000000: 16808, 6000000: 19425, 7000000: 22359, 8000000: 25656, 9000000: 29370, 10000000: 33563},
-            50: {2000000: 7282, 3000000: 9999, 4000000: 13490, 5000000: 18030, 6000000: 20859, 7000000: 24032, 8000000: 27602, 9000000: 31627, 10000000: 36177},
-            51: {2000000: 7696, 3000000: 10620, 4000000: 14393, 5000000: 19325, 6000000: 22379, 7000000: 25809, 8000000: 29670, 9000000: 34030, 10000000: 38962},
-            52: {2000000: 8128, 3000000: 11270, 4000000: 15345, 5000000: 20699, 6000000: 23993, 7000000: 27696, 8000000: 31869, 9000000: 36587, 10000000: 41931},
-            53: {2000000: 8599, 3000000: 11982, 4000000: 16389, 5000000: 22206, 6000000: 25766, 7000000: 29771, 8000000: 34290, 9000000: 39403, 10000000: 45199},
-            54: {2000000: 9110, 3000000: 12757, 4000000: 17528, 5000000: 23854, 6000000: 27706, 7000000: 32044, 8000000: 36942, 9000000: 42488, 10000000: 48782},
-            55: {2000000: 9612, 3000000: 13501, 4000000: 18624, 5000000: 25464, 6000000: 29586, 7000000: 34238, 8000000: 39503, 9000000: 45477, 10000000: 52269},
-            56: {2000000: 10769, 3000000: 15228, 4000000: 21045, 5000000: 28757, 6000000: 33483, 7000000: 38787, 8000000: 44761, 9000000: 51511, 10000000: 59157},
-            57: {2000000: 11820, 3000000: 16802, 4000000: 23275, 5000000: 31838, 6000000: 37122, 7000000: 43038, 8000000: 49686, 9000000: 57182, 10000000: 65660},
-            58: {2000000: 13049, 3000000: 18645, 4000000: 25880, 5000000: 35420, 6000000: 41359, 7000000: 47989, 8000000: 55419, 9000000: 63777, 10000000: 73210},
-            59: {2000000: 14459, 3000000: 20764, 4000000: 28868, 5000000: 39514, 6000000: 46208, 7000000: 53657, 8000000: 61981, 9000000: 71319, 10000000: 81834},
-            60: {2000000: 16091, 3000000: 23222, 4000000: 32326, 5000000: 44234, 6000000: 51805, 7000000: 60201, 8000000: 69553, 9000000: 80015, 10000000: 91765}
-        };
+   <script>
+    // === ENHANCED VALIDATION FUNCTIONS ===
 
-        function initAnalyzer() {
-            document.getElementById('prevBtn').addEventListener('click', goToPreviousStep);
-            document.getElementById('nextBtn').addEventListener('click', goToNextStep);
-            document.getElementById('calculateBtn').addEventListener('click', calculateResults);
-            document.getElementById('whatsappResults').addEventListener('click', sendToWhatsApp);
-            
-            // Set permanent checkboxes as checked
-            document.getElementById('analyzerAnnualBonus').checked = true;
-            document.getElementById('analyzerPermanentDisability').checked = true;
-            document.getElementById('analyzerCriticalIllness').checked = true;
-            document.getElementById('analyzerAccidentalDeath').checked = true;
-            
-            updateStepDisplay();
-            generatePremiumTable();
+    // List of ALL known Kenyan number prefixes (including landlines)
+    const kenyanCarrierPrefixes = {
+        'Safaricom Mobile': ['701', '702', '703', '704', '705', '706', '707', '708', '709',
+                            '710', '711', '712', '713', '714', '715', '716', '717', '718', '719',
+                            '740', '741', '742', '743', '744', '745', '746', '747', '748', '749',
+                            '768', '769', '790', '791', '792', '793'],
+        'Airtel Mobile': ['730', '731', '732', '733', '734', '735', '736', '737', '738', '739',
+                         '750', '751', '752', '753', '754', '755', '756', '757', '758', '759',
+                         '780', '781', '782', '783', '784', '785', '786', '787', '788', '789'],
+        'Telkom Mobile': ['770', '771', '772', '773', '774', '775', '776', '777', '778', '779'],
+        // ADDED LANDLINES
+        'Safaricom Landline': ['011', '020', '040', '041', '042', '043', '044', '045', '046', '049', 
+                              '050', '051', '052', '053', '054', '055', '056', '057', '058', '059',
+                              '060', '061', '062', '063', '064', '065', '066', '067', '068', '069'],
+        'Airtel Landline': ['070'],  // Note: 070 was reassigned from Telkom to Airtel
+        'Telkom Landline': ['071', '072', '073', '075']
+    };
+
+    // Enhanced Kenyan phone validation - FIXED to include landlines
+    function isValidKenyanPhone(phone) {
+        // Remove spaces, dashes, and plus sign for validation
+        const cleaned = phone.replace(/[\s\-+]/g, '');
+        
+        // Check if it's a 9, 10, or 12 digit number (landlines are 9 digits after 0)
+        if (cleaned.length < 9) return false;
+        
+        // Extract the Kenyan number
+        let kenyanNumber;
+        if (cleaned.startsWith('254')) {
+            kenyanNumber = '0' + cleaned.substring(3);
+        } else if (cleaned.startsWith('0')) {
+            kenyanNumber = cleaned;
+        } else {
+            return false;
         }
+        
+        // Mobile: 10 digits starting with 07 or 01
+        // Landline: 9 digits starting with 01, 02, 04, 05, 06, 07
+        if (!/^0[124567]\d{7,8}$/.test(kenyanNumber)) return false;
+        
+        // Get the prefix (first 3 digits after 0)
+        const prefix = kenyanNumber.substring(0, 3);
+        
+        // Check if prefix belongs to a known Kenyan carrier (mobile or landline)
+        let validCarrier = false;
+        for (const carrier in kenyanCarrierPrefixes) {
+            if (kenyanCarrierPrefixes[carrier].includes(prefix)) {
+                validCarrier = true;
+                break;
+            }
+        }
+        
+        return validCarrier;
+    }
 
-        function generatePremiumTable() {
-            const tableContent = document.getElementById('premiumTableContent');
-            let html = '';
+    // Enhanced email validation - SIMPLIFIED
+    function isValidEmail(email) {
+        // Simple but effective email regex
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailRegex.test(email);
+    }
+
+    // Check for obvious fake numbers - UPDATED for landlines
+    function isSuspiciousNumber(phone) {
+        const cleaned = phone.replace(/[\s\-+]/g, '');
+        
+        // Check for sequential numbers
+        if (/0123456789/.test(cleaned) || /9876543210/.test(cleaned)) {
+            return true;
+        }
+        
+        // Check for repeated digits (but allow for some legitimate patterns)
+        if (/(\d)\1{7,}/.test(cleaned)) {
+            return true;
+        }
+        
+        // Check for test patterns
+        if (cleaned.includes('123456') || cleaned.includes('654321')) {
+            return true;
+        }
+        
+        // Check for all zeros
+        if (/^0+$/.test(cleaned) || /^1+$/.test(cleaned)) {
+            return true;
+        }
+        
+        return false;
+    }
+
+    // Check for obvious fake emails
+    function isSuspiciousEmail(email) {
+        // Check for test patterns
+        if (/^(test|demo|fake|example|invalid)@/i.test(email)) {
+            return true;
+        }
+        
+        // Check for no-name emails
+        const localPart = email.split('@')[0];
+        if (localPart.length < 2) {
+            return true;
+        }
+        
+        return false;
+    }
+
+    // Enhanced validation for step 3 - FIXED VERSION
+    function validateStep3() {
+        const phone = document.getElementById('analyzerPhone').value.trim();
+        const email = document.getElementById('analyzerEmail').value.trim();
+        const phoneError = document.getElementById('phoneError');
+        const emailError = document.getElementById('emailError');
+        const phoneField = document.getElementById('analyzerPhone');
+        const emailField = document.getElementById('analyzerEmail');
+        
+        let isValid = true;
+        
+        // Reset previous errors
+        phoneError.style.display = 'none';
+        emailError.style.display = 'none';
+        phoneField.classList.remove('error', 'valid');
+        emailField.classList.remove('error', 'valid');
+        
+        // === VALIDATE PHONE ===
+        if (!phone) {
+            phoneError.textContent = 'Phone number is required';
+            phoneError.style.display = 'block';
+            phoneError.classList.remove('valid');
+            phoneError.classList.add('error');
+            phoneField.classList.add('error');
+            isValid = false;
+        } else {
+            // Check if it's a valid Kenyan number (mobile OR landline)
+            if (!isValidKenyanPhone(phone)) {
+                phoneError.textContent = 'Please enter a valid Kenyan phone number (mobile or landline)';
+                phoneError.style.display = 'block';
+                phoneError.classList.remove('valid');
+                phoneError.classList.add('error');
+                phoneField.classList.add('error');
+                isValid = false;
+            } 
+            // Check for suspicious patterns
+            else if (isSuspiciousNumber(phone)) {
+                phoneError.textContent = 'Please enter your real phone number';
+                phoneError.style.display = 'block';
+                phoneError.classList.remove('valid');
+                phoneError.classList.add('error');
+                phoneField.classList.add('error');
+                isValid = false;
+            } else {
+                phoneError.textContent = '✓ Valid Kenyan number';
+                phoneError.style.display = 'block';
+                phoneError.classList.remove('error');
+                phoneError.classList.add('valid');
+                phoneField.classList.remove('error');
+                phoneField.classList.add('valid');
+            }
+        }
+        
+        // === VALIDATE EMAIL ===
+        if (!email) {
+            emailError.textContent = 'Email address is required';
+            emailError.style.display = 'block';
+            emailError.classList.remove('valid');
+            emailError.classList.add('error');
+            emailField.classList.add('error');
+            isValid = false;
+        } else {
+            // Check basic email format
+            if (!isValidEmail(email)) {
+                emailError.textContent = 'Please enter a valid email address';
+                emailError.style.display = 'block';
+                emailError.classList.remove('valid');
+                emailError.classList.add('error');
+                emailField.classList.add('error');
+                isValid = false;
+            } 
+            // Check for suspicious email patterns
+            else if (isSuspiciousEmail(email)) {
+                emailError.textContent = 'Please enter a valid email address';
+                emailError.style.display = 'block';
+                emailError.classList.remove('valid');
+                emailError.classList.add('error');
+                emailField.classList.add('error');
+                isValid = false;
+            } else {
+                emailError.textContent = '✓ Valid email address';
+                emailError.style.display = 'block';
+                emailError.classList.remove('error');
+                emailError.classList.add('valid');
+                emailField.classList.remove('error');
+                emailField.classList.add('valid');
+            }
+        }
+        
+        return isValid;
+    }
+
+    // Add real-time validation as users type
+    function setupRealTimeValidation() {
+        const phoneField = document.getElementById('analyzerPhone');
+        const emailField = document.getElementById('analyzerEmail');
+        const phoneError = document.getElementById('phoneError');
+        const emailError = document.getElementById('emailError');
+        
+        // Update the hint text to include landlines
+        document.getElementById('phoneHint').textContent = 'Format: 07XXXXXXXX or 0XX XXXXXXX or +254...';
+        
+        // Real-time phone validation
+        phoneField.addEventListener('input', function() {
+            const phone = phoneField.value.trim();
+            if (!phone) {
+                phoneError.style.display = 'none';
+                phoneField.classList.remove('error', 'valid');
+                return;
+            }
             
-            // Generate sample rows for ages 25, 35, 45, 55 as per Excel data
-            const sampleAges = [25, 35, 45, 55];
+            if (!isValidKenyanPhone(phone) || isSuspiciousNumber(phone)) {
+                phoneError.textContent = 'Enter a valid Kenyan number';
+                phoneError.style.display = 'block';
+                phoneError.classList.remove('valid');
+                phoneError.classList.add('error');
+                phoneField.classList.remove('valid');
+                phoneField.classList.add('error');
+            } else {
+                phoneError.textContent = '✓ Valid Kenyan number';
+                phoneError.style.display = 'block';
+                phoneError.classList.remove('error');
+                phoneError.classList.add('valid');
+                phoneField.classList.remove('error');
+                phoneField.classList.add('valid');
+            }
+        });
+        
+        // Real-time email validation
+        emailField.addEventListener('input', function() {
+            const email = emailField.value.trim();
+            if (!email) {
+                emailError.style.display = 'none';
+                emailField.classList.remove('error', 'valid');
+                return;
+            }
             
-            sampleAges.forEach(age => {
-                const premium = premiumData[age] ? premiumData[age][5000000] : 'N/A';
-                html += `
-                    <div class="table-row">
-                        <div class="row-number">${age}</div>
-                        <div class="row-policy">KES 2M, 3M, 4M, 5M, 6M, 7M, 8M, 9M, 10M</div>
-                        <div class="row-price">KES ${premium ? premium.toLocaleString() : 'N/A'}</div>
-                        <div class="row-action">
-                            <a href="https://wa.me/254722460390?text=Hello!%20I'm%20interested%20in%20Whole%20of%20Life%20Insurance%20at%20age%20${age}%20with%20KES%205M%20cover%20(10-year%20payment%20period)." class="table-cta">
-                                <i class="fab fa-whatsapp"></i> Quote
-                            </a>
-                        </div>
+            if (!isValidEmail(email) || isSuspiciousEmail(email)) {
+                emailError.textContent = 'Enter a valid email address';
+                emailError.style.display = 'block';
+                emailError.classList.remove('valid');
+                emailError.classList.add('error');
+                emailField.classList.remove('valid');
+                emailField.classList.add('error');
+            } else {
+                emailError.textContent = '✓ Valid email address';
+                emailError.style.display = 'block';
+                emailError.classList.remove('error');
+                emailError.classList.add('valid');
+                emailField.classList.remove('error');
+                emailField.classList.add('valid');
+            }
+        });
+    }
+
+    // === PREMIUM ANALYZER FUNCTIONALITY ===
+    let currentStep = 1;
+    const totalSteps = 3;
+    let userData = {};
+
+    // CORRECTED Premium data from Excel file (10-year payment period) - EXACT VALUES ONLY
+    const premiumData = {
+        18: {2000000: 3395, 3000000: 4117, 4000000: 4914, 5000000: 5800, 6000000: 6488, 7000000: 7217, 8000000: 7991, 9000000: 8815, 10000000: 9692},
+        19: {2000000: 3395, 3000000: 4117, 4000000: 4914, 5000000: 5800, 6000000: 6488, 7000000: 7217, 8000000: 7991, 9000000: 8815, 10000000: 9692},
+        20: {2000000: 3395, 3000000: 4117, 4000000: 4914, 5000000: 5800, 6000000: 6488, 7000000: 7217, 8000000: 7991, 9000000: 8815, 10000000: 9692},
+        21: {2000000: 3395, 3000000: 4117, 4000000: 4914, 5000000: 5800, 6000000: 6488, 7000000: 7217, 8000000: 7991, 9000000: 8815, 10000000: 9692},
+        22: {2000000: 3425, 3000000: 4163, 4000000: 4981, 5000000: 5892, 6000000: 6597, 7000000: 7346, 8000000: 8142, 9000000: 8991, 10000000: 9897},
+        23: {2000000: 3455, 3000000: 4210, 4000000: 5049, 5000000: 5987, 6000000: 6709, 7000000: 7478, 8000000: 8297, 9000000: 9171, 10000000: 10107},
+        24: {2000000: 3486, 3000000: 4257, 4000000: 5118, 5000000: 6084, 6000000: 6824, 7000000: 7613, 8000000: 8456, 9000000: 9357, 10000000: 10324},
+        25: {2000000: 3520, 3000000: 4309, 4000000: 5193, 5000000: 6188, 6000000: 6947, 7000000: 7757, 8000000: 8623, 9000000: 9552, 10000000: 10550},
+        26: {2000000: 3534, 3000000: 4332, 4000000: 5229, 5000000: 6245, 6000000: 7013, 7000000: 7834, 8000000: 8715, 9000000: 9662, 10000000: 10682},
+        27: {2000000: 3569, 3000000: 4385, 4000000: 5307, 5000000: 6355, 6000000: 7142, 7000000: 7985, 8000000: 8892, 9000000: 9868, 10000000: 10922},
+        28: {2000000: 3604, 3000000: 4439, 4000000: 5386, 5000000: 6467, 6000000: 7274, 7000000: 8140, 8000000: 9073, 9000000: 10080, 10000000: 11168},
+        29: {2000000: 3619, 3000000: 4464, 4000000: 5427, 5000000: 6531, 6000000: 7348, 7000000: 8229, 8000000: 9180, 9000000: 10208, 10000000: 11322},
+        30: {2000000: 3655, 3000000: 4520, 4000000: 5509, 5000000: 6648, 6000000: 7487, 7000000: 8392, 8000000: 9371, 9000000: 10431, 10000000: 11583},
+        31: {2000000: 3722, 3000000: 4621, 4000000: 5656, 5000000: 6855, 6000000: 7729, 7000000: 8674, 8000000: 9699, 9000000: 10813, 10000000: 12025},
+        32: {2000000: 3791, 3000000: 4726, 4000000: 5809, 5000000: 7071, 6000000: 7981, 7000000: 8969, 8000000: 10043, 9000000: 11212, 10000000: 12489},
+        33: {2000000: 3861, 3000000: 4833, 4000000: 5966, 5000000: 7294, 6000000: 8244, 7000000: 9276, 8000000: 10401, 9000000: 11630, 10000000: 12975},
+        34: {2000000: 3933, 3000000: 4943, 4000000: 6128, 5000000: 7527, 6000000: 8517, 7000000: 9596, 8000000: 10776, 9000000: 12068, 10000000: 13485},
+        35: {2000000: 4006, 3000000: 5056, 4000000: 6296, 5000000: 7768, 6000000: 8801, 7000000: 9930, 8000000: 11167, 9000000: 12525, 10000000: 14020},
+        36: {2000000: 4081, 3000000: 5173, 4000000: 6469, 5000000: 8018, 6000000: 9096, 7000000: 10278, 8000000: 11576, 9000000: 13004, 10000000: 14580},
+        37: {2000000: 4218, 3000000: 5378, 4000000: 6764, 5000000: 8431, 6000000: 9579, 7000000: 10841, 8000000: 12229, 9000000: 13761, 10000000: 15454},
+        38: {2000000: 4359, 3000000: 5590, 4000000: 7070, 5000000: 8863, 6000000: 10086, 7000000: 11432, 8000000: 12917, 9000000: 14559, 10000000: 16378},
+        39: {2000000: 4504, 3000000: 5810, 4000000: 7389, 5000000: 9315, 6000000: 10617, 7000000: 12053, 8000000: 13641, 9000000: 15401, 10000000: 17355},
+        40: {2000000: 4673, 3000000: 6067, 4000000: 7761, 5000000: 9839, 6000000: 11235, 7000000: 12776, 8000000: 14484, 9000000: 16379, 10000000: 18487},
+        41: {2000000: 4826, 3000000: 6302, 4000000: 8107, 5000000: 10336, 6000000: 11820, 7000000: 13463, 8000000: 15287, 9000000: 17317, 10000000: 19579},
+        42: {2000000: 4984, 3000000: 6545, 4000000: 8467, 5000000: 10857, 6000000: 12434, 7000000: 14185, 8000000: 16134, 9000000: 18307, 10000000: 20734},
+        43: {2000000: 5210, 3000000: 6881, 4000000: 8951, 5000000: 11539, 6000000: 13234, 7000000: 15118, 8000000: 17217, 9000000: 19562, 10000000: 22185},
+        44: {2000000: 5444, 3000000: 7231, 4000000: 9458, 5000000: 12259, 6000000: 14078, 7000000: 16103, 8000000: 18363, 9000000: 20891, 10000000: 23725},
+        45: {2000000: 5685, 3000000: 7595, 4000000: 9988, 5000000: 13018, 6000000: 14969, 7000000: 17144, 8000000: 19576, 9000000: 22301, 10000000: 25360},
+        46: {2000000: 5956, 3000000: 8005, 4000000: 10585, 5000000: 13868, 6000000: 15969, 7000000: 18315, 8000000: 20940, 9000000: 23886, 10000000: 27198},
+        47: {2000000: 6216, 3000000: 8400, 4000000: 11167, 5000000: 14712, 6000000: 16962, 7000000: 19479, 8000000: 22301, 9000000: 25472, 10000000: 29044},
+        48: {2000000: 6505, 3000000: 8842, 4000000: 11819, 5000000: 15653, 6000000: 18072, 7000000: 20781, 8000000: 23823, 9000000: 27246, 10000000: 31108},
+        49: {2000000: 6886, 3000000: 9407, 4000000: 12633, 5000000: 16808, 6000000: 19425, 7000000: 22359, 8000000: 25656, 9000000: 29370, 10000000: 33563},
+        50: {2000000: 7282, 3000000: 9999, 4000000: 13490, 5000000: 18030, 6000000: 20859, 7000000: 24032, 8000000: 27602, 9000000: 31627, 10000000: 36177},
+        51: {2000000: 7696, 3000000: 10620, 4000000: 14393, 5000000: 19325, 6000000: 22379, 7000000: 25809, 8000000: 29670, 9000000: 34030, 10000000: 38962},
+        52: {2000000: 8128, 3000000: 11270, 4000000: 15345, 5000000: 20699, 6000000: 23993, 7000000: 27696, 8000000: 31869, 9000000: 36587, 10000000: 41931},
+        53: {2000000: 8599, 3000000: 11982, 4000000: 16389, 5000000: 22206, 6000000: 25766, 7000000: 29771, 8000000: 34290, 9000000: 39403, 10000000: 45199},
+        54: {2000000: 9110, 3000000: 12757, 4000000: 17528, 5000000: 23854, 6000000: 27706, 7000000: 32044, 8000000: 36942, 9000000: 42488, 10000000: 48782},
+        55: {2000000: 9612, 3000000: 13501, 4000000: 18624, 5000000: 25464, 6000000: 29586, 7000000: 34238, 8000000: 39503, 9000000: 45477, 10000000: 52269},
+        56: {2000000: 10769, 3000000: 15228, 4000000: 21045, 5000000: 28757, 6000000: 33483, 7000000: 38787, 8000000: 44761, 9000000: 51511, 10000000: 59157},
+        57: {2000000: 11820, 3000000: 16802, 4000000: 23275, 5000000: 31838, 6000000: 37122, 7000000: 43038, 8000000: 49686, 9000000: 57182, 10000000: 65660},
+        58: {2000000: 13049, 3000000: 18645, 4000000: 25880, 5000000: 35420, 6000000: 41359, 7000000: 47989, 8000000: 55419, 9000000: 63777, 10000000: 73210},
+        59: {2000000: 14459, 3000000: 20764, 4000000: 28868, 5000000: 39514, 6000000: 46208, 7000000: 53657, 8000000: 61981, 9000000: 71319, 10000000: 81834},
+        60: {2000000: 16091, 3000000: 23222, 4000000: 32326, 5000000: 44234, 6000000: 51805, 7000000: 60201, 8000000: 69553, 9000000: 80015, 10000000: 91765}
+    };
+
+    function initAnalyzer() {
+        document.getElementById('prevBtn').addEventListener('click', goToPreviousStep);
+        document.getElementById('nextBtn').addEventListener('click', goToNextStep);
+        document.getElementById('calculateBtn').addEventListener('click', calculateResults);
+        document.getElementById('whatsappResults').addEventListener('click', sendToWhatsApp);
+        document.getElementById('pdfDownloadBtn').addEventListener('click', generatePDF);
+        document.getElementById('backToCalculatorBtn').addEventListener('click', goBackToCalculator);
+        
+        // Set permanent checkboxes as checked
+        document.getElementById('analyzerAnnualBonus').checked = true;
+        document.getElementById('analyzerPermanentDisability').checked = true;
+        document.getElementById('analyzerCriticalIllness').checked = true;
+        document.getElementById('analyzerAccidentalDeath').checked = true;
+        
+        // Enable real-time validation
+        setupRealTimeValidation();
+        
+        updateStepDisplay();
+        generatePremiumTable();
+    }
+
+    function generatePremiumTable() {
+        const tableContent = document.getElementById('premiumTableContent');
+        let html = '';
+        
+        // Generate sample rows for ages 25, 35, 45, 55 as per Excel data
+        const sampleAges = [25, 35, 45, 55];
+        
+        sampleAges.forEach(age => {
+            const premium = premiumData[age] ? premiumData[age][5000000] : 'N/A';
+            html += `
+                <div class="table-row">
+                    <div class="row-number">${age}</div>
+                    <div class="row-policy">KES 2M, 3M, 4M, 5M, 6M, 7M, 8M, 9M, 10M</div>
+                    <div class="row-price">KES ${premium ? premium.toLocaleString() : 'N/A'}</div>
+                    <div class="row-action">
+                        <a href="https://wa.me/254722460390?text=Hello!%20I'm%20interested%20in%20Whole%20of%20Life%20Insurance%20at%20age%20${age}%20with%20KES%205M%20cover%20(10-year%20payment%20period)." class="table-cta">
+                            <i class="fab fa-whatsapp"></i> Quote
+                        </a>
                     </div>
-                `;
-            });
-            
-            tableContent.innerHTML = html;
-        }
+                </div>
+            `;
+        });
+        
+        tableContent.innerHTML = html;
+    }
 
-        function goToPreviousStep() {
-            if (currentStep > 1) {
-                currentStep--;
+    function goToPreviousStep() {
+        if (currentStep > 1) {
+            currentStep--;
+            updateStepDisplay();
+        }
+    }
+
+    function goToNextStep() {
+        if (currentStep === 3) {
+            // Special validation for step 3
+            if (!validateStep3()) {
+                return;
+            }
+        }
+        
+        if (validateCurrentStep()) {
+            saveStepData();
+            if (currentStep < totalSteps) {
+                currentStep++;
                 updateStepDisplay();
             }
         }
+    }
 
-        function goToNextStep() {
-            if (validateCurrentStep()) {
-                saveStepData();
-                if (currentStep < totalSteps) {
-                    currentStep++;
-                    updateStepDisplay();
-                }
+    function validateCurrentStep() {
+        const currentStepElement = document.getElementById(`step${currentStep}`);
+        const requiredFields = currentStepElement.querySelectorAll('[required]');
+        
+        for (const field of requiredFields) {
+            if (!field.value.trim()) {
+                alert(`Please fill in the ${field.previousElementSibling.textContent} field.`);
+                field.focus();
+                return false;
             }
         }
+        
+        return true;
+    }
 
-        function validateCurrentStep() {
-            const currentStepElement = document.getElementById(`step${currentStep}`);
-            const requiredFields = currentStepElement.querySelectorAll('[required]');
-            
-            for (const field of requiredFields) {
-                if (!field.value.trim()) {
-                    alert(`Please fill in the ${field.previousElementSibling.textContent} field.`);
-                    field.focus();
-                    return false;
-                }
-            }
-            
-            return true;
-        }
-
-        function saveStepData() {
-            const currentStepElement = document.getElementById(`step${currentStep}`);
-            const inputs = currentStepElement.querySelectorAll('input, select');
-            
-            inputs.forEach(input => {
-                if (input.type === 'checkbox') {
-                    userData[input.id] = input.checked;
-                } else {
-                    userData[input.id] = input.value;
-                }
-            });
-        }
-
-        function updateStepDisplay() {
-            // Hide all steps
-            for (let i = 1; i <= totalSteps + 1; i++) {
-                const step = document.getElementById(`step${i}`);
-                if (step) step.style.display = 'none';
-            }
-            
-            // Show current step
-            document.getElementById(`step${currentStep}`).style.display = 'block';
-            
-            // Update buttons
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const calculateBtn = document.getElementById('calculateBtn');
-            
-            prevBtn.disabled = currentStep === 1;
-            
-            if (currentStep === totalSteps) {
-                nextBtn.style.display = 'none';
-                calculateBtn.style.display = 'flex';
+    function saveStepData() {
+        const currentStepElement = document.getElementById(`step${currentStep}`);
+        const inputs = currentStepElement.querySelectorAll('input, select');
+        
+        inputs.forEach(input => {
+            if (input.type === 'checkbox') {
+                userData[input.id] = input.checked;
             } else {
-                nextBtn.style.display = 'flex';
-                calculateBtn.style.display = 'none';
+                userData[input.id] = input.value;
             }
-            
-            // Hide results if showing
-            document.getElementById('results').style.display = 'none';
-        }
+        });
+    }
 
-        function calculateResults() {
-            if (!validateCurrentStep()) return;
-            saveStepData();
-            
-            // Get user inputs
-            const age = parseInt(userData.analyzerAge);
-            const amount = parseInt(userData.analyzerAmount);
-            
-            // Get EXACT premium from Excel data - NO ADJUSTMENTS WHATSOEVER
-            let monthlyPremium = 0;
-            
-            if (premiumData[age] && premiumData[age][amount]) {
-                monthlyPremium = premiumData[age][amount];
-                // NO HEALTH/SMOKER ADJUSTMENTS - EXACT EXCEL VALUE ONLY
-            } else {
-                // If data not found (shouldn't happen with our dropdowns)
-                monthlyPremium = 0;
-            }
-            
-            // Display results - MONTHLY PREMIUM ONLY (as client requested)
-            displayResults(monthlyPremium, amount, age);
+    function updateStepDisplay() {
+        // Hide all steps
+        for (let i = 1; i <= totalSteps + 1; i++) {
+            const step = document.getElementById(`step${i}`);
+            if (step) step.style.display = 'none';
         }
+        
+        // Show current step
+        document.getElementById(`step${currentStep}`).style.display = 'block';
+        
+        // Update buttons
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const calculateBtn = document.getElementById('calculateBtn');
+        
+        prevBtn.disabled = currentStep === 1;
+        
+        if (currentStep === totalSteps) {
+            nextBtn.style.display = 'none';
+            calculateBtn.style.display = 'flex';
+        } else {
+            nextBtn.style.display = 'flex';
+            calculateBtn.style.display = 'none';
+        }
+        
+        // Hide results if showing
+        document.getElementById('results').style.display = 'none';
+    }
 
-        function displayResults(monthly, amount, age) {
-            // Show results step
-            document.getElementById(`step${currentStep}`).style.display = 'none';
-            document.getElementById('results').style.display = 'block';
-            
-            // Calculate benefits based on amount (as per Word document)
-            const sumAssured = amount;
-            const annualBonus = Math.round(sumAssured * 0.02); // 2% annual bonus
-            const totalPermanentDisability = sumAssured;
-            const criticalIllness = Math.round(sumAssured * 0.5); // 50% of sum assured
-            const naturalDeath = sumAssured + annualBonus; // sum assured + bonus
-            const accidentalDeath = (sumAssured * 2) + annualBonus; // 200% + bonus
-            
-            const resultsHTML = `
-                <div style="text-align: center;">
-                    <h4 style="font-size: 1.2rem; color: var(--primary-dark); margin-bottom: 20px;">Your Whole of Life Insurance Premium Analysis</h4>
-                    
-                    <div style="background: white; padding: 30px; border-radius: 10px; box-shadow: var(--shadow-sm); margin-bottom: 30px; max-width: 400px; margin-left: auto; margin-right: auto;">
-                        <h5 style="color: var(--neutral-gray); margin-bottom: 10px; font-size: 1.1rem;">Your Monthly Premium</h5>
-                        <p style="font-size: 2.2rem; font-weight: 700; color: var(--primary-dark); margin: 20px 0;">KES ${monthly.toLocaleString()}</p>
-                        <p style="color: var(--neutral-gray); font-size: 0.9rem; margin-top: 10px;">
-                            Based on age ${age} and sum assured of KES ${(amount/1000000).toFixed(0)}M<br>
-                            10-year payment period
-                        </p>
-                    </div>
-                    
-                    <div style="background: white; padding: 25px; border-radius: 10px; box-shadow: var(--shadow-sm); margin-bottom: 20px; text-align: left;">
-                        <h5 style="color: var(--primary-dark); margin-bottom: 15px; font-size: 1.1rem;">Your Coverage Breakdown for KES ${(amount/1000000).toFixed(0)}M Sum Assured:</h5>
-                        
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
-                            <div>
-                                <div style="font-weight: 600; color: var(--primary-blue);">KES ${sumAssured.toLocaleString()}</div>
-                                <div style="font-size: 0.9rem; color: var(--neutral-gray);">Sum Assured (Basic Coverage)</div>
-                            </div>
-                            
-                            <div>
-                                <div style="font-weight: 600; color: var(--primary-blue);">KES ${annualBonus.toLocaleString()}/yr</div>
-                                <div style="font-size: 0.9rem; color: var(--neutral-gray);">Annual Bonus (2%)</div>
-                            </div>
-                            
-                            <div>
-                                <div style="font-weight: 600; color: var(--primary-blue);">KES ${totalPermanentDisability.toLocaleString()}</div>
-                                <div style="font-size: 0.9rem; color: var(--neutral-gray);">Total & Permanent Disability</div>
-                            </div>
-                            
-                            <div>
-                                <div style="font-weight: 600; color: var(--primary-blue);">KES ${criticalIllness.toLocaleString()}</div>
-                                <div style="font-size: 0.9rem; color: var(--neutral-gray);">Critical Illness Benefit</div>
-                            </div>
-                            
-                            <div>
-                                <div style="font-weight: 600; color: var(--primary-blue);">KES ${naturalDeath.toLocaleString()}</div>
-                                <div style="font-size: 0.9rem; color: var(--neutral-gray);">Natural Death Benefit</div>
-                            </div>
-                            
-                            <div>
-                                <div style="font-weight: 600; color: var(--primary-blue);">KES ${accidentalDeath.toLocaleString()}</div>
-                                <div style="font-size: 0.9rem; color: var(--neutral-gray);">Accidental Death Benefit</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div style="background: rgba(30, 58, 138, 0.05); padding: 20px; border-radius: 10px; margin-top: 20px;">
-                        <p style="color: var(--primary-dark); font-weight: 500; font-style: italic;">
-                            "This whole life plan provides lifetime protection with enhanced benefits for accidents and support for critical illness diagnoses, ensuring comprehensive coverage for you and stress-free life for your family."
-                        </p>
-                    </div>
-                    
-                    <p style="color: var(--neutral-gray); font-size: 0.9rem; margin-top: 20px;">
-                        Note: This premium is based on official rate cards. Health and lifestyle information collected is for agent reference only and does not affect this premium calculation.
+    function calculateResults() {
+        if (currentStep === 3 && !validateStep3()) return;
+        if (!validateCurrentStep()) return;
+        saveStepData();
+        
+        // Get user inputs
+        const age = parseInt(userData.analyzerAge);
+        const amount = parseInt(userData.analyzerAmount);
+        
+        // Get EXACT premium from Excel data - NO ADJUSTMENTS WHATSOEVER
+        let monthlyPremium = 0;
+        
+        if (premiumData[age] && premiumData[age][amount]) {
+            monthlyPremium = premiumData[age][amount];
+            // NO HEALTH/SMOKER ADJUSTMENTS - EXACT EXCEL VALUE ONLY
+        } else {
+            // If data not found (shouldn't happen with our dropdowns)
+            monthlyPremium = 0;
+        }
+        
+        // Display results - MONTHLY PREMIUM ONLY (as client requested)
+        displayResults(monthlyPremium, amount, age);
+    }
+
+    function displayResults(monthly, amount, age) {
+        // Show results step
+        document.getElementById(`step${currentStep}`).style.display = 'none';
+        document.getElementById('results').style.display = 'block';
+        
+        // Calculate benefits based on amount (as per Word document)
+        const sumAssured = amount;
+        const annualBonus = Math.round(sumAssured * 0.02); // 2% annual bonus
+        const totalPermanentDisability = sumAssured;
+        const criticalIllness = Math.round(sumAssured * 0.5); // 50% of sum assured
+        const naturalDeath = sumAssured + annualBonus; // sum assured + bonus
+        const accidentalDeath = (sumAssured * 2) + annualBonus; // 200% + bonus
+        
+        const resultsHTML = `
+            <div style="text-align: center;">
+                <h4 style="font-size: 1.2rem; color: var(--primary-dark); margin-bottom: 20px;">Your Whole of Life Insurance Premium Analysis</h4>
+                
+                <div style="background: white; padding: 30px; border-radius: 10px; box-shadow: var(--shadow-sm); margin-bottom: 30px; max-width: 400px; margin-left: auto; margin-right: auto;">
+                    <h5 style="color: var(--neutral-gray); margin-bottom: 10px; font-size: 1.1rem;">Your Monthly Premium</h5>
+                    <p style="font-size: 2.2rem; font-weight: 700; color: var(--primary-dark); margin: 20px 0;">KES ${monthly.toLocaleString()}</p>
+                    <p style="color: var(--neutral-gray); font-size: 0.9rem; margin-top: 10px;">
+                        Based on age ${age} and sum assured of KES ${(amount/1000000).toFixed(0)}M<br>
+                        10-year payment period
                     </p>
                 </div>
-            `;
-            
-            document.getElementById('analysisResults').innerHTML = resultsHTML;
-            
-            // Update buttons
-            document.getElementById('prevBtn').style.display = 'flex';
-            document.getElementById('nextBtn').style.display = 'none';
-            document.getElementById('calculateBtn').style.display = 'none';
-        }
+                
+                <div style="background: white; padding: 25px; border-radius: 10px; box-shadow: var(--shadow-sm); margin-bottom: 20px; text-align: left;">
+                    <h5 style="color: var(--primary-dark); margin-bottom: 15px; font-size: 1.1rem;">Your Coverage Breakdown for KES ${(amount/1000000).toFixed(0)}M Sum Assured:</h5>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                        <div>
+                            <div style="font-weight: 600; color: var(--primary-blue);">KES ${sumAssured.toLocaleString()}</div>
+                            <div style="font-size: 0.9rem; color: var(--neutral-gray);">Sum Assured (Basic Coverage)</div>
+                        </div>
+                        
+                        <div>
+                            <div style="font-weight: 600; color: var(--primary-blue);">KES ${annualBonus.toLocaleString()}/yr</div>
+                            <div style="font-size: 0.9rem; color: var(--neutral-gray);">Annual Bonus (2%)</div>
+                        </div>
+                        
+                        <div>
+                            <div style="font-weight: 600; color: var(--primary-blue);">KES ${totalPermanentDisability.toLocaleString()}</div>
+                            <div style="font-size: 0.9rem; color: var(--neutral-gray);">Total & Permanent Disability</div>
+                        </div>
+                        
+                        <div>
+                            <div style="font-weight: 600; color: var(--primary-blue);">KES ${criticalIllness.toLocaleString()}</div>
+                            <div style="font-size: 0.9rem; color: var(--neutral-gray);">Critical Illness Benefit</div>
+                        </div>
+                        
+                        <div>
+                            <div style="font-weight: 600; color: var(--primary-blue);">KES ${naturalDeath.toLocaleString()}</div>
+                            <div style="font-size: 0.9rem; color: var(--neutral-gray);">Natural Death Benefit</div>
+                        </div>
+                        
+                        <div>
+                            <div style="font-weight: 600; color: var(--primary-blue);">KES ${accidentalDeath.toLocaleString()}</div>
+                            <div style="font-size: 0.9rem; color: var(--neutral-gray);">Accidental Death Benefit</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: rgba(30, 58, 138, 0.05); padding: 20px; border-radius: 10px; margin-top: 20px;">
+                    <p style="color: var(--primary-dark); font-weight: 500; font-style: italic;">
+                        "This whole life plan provides lifetime protection with enhanced benefits for accidents and support for critical illness diagnoses, ensuring comprehensive coverage for you and stress-free life for your family."
+                    </p>
+                </div>
+            </div>
+        `;
+        
+        document.getElementById('analysisResults').innerHTML = resultsHTML;
+        
+        // Store the premium data for PDF generation
+        window.currentPremiumData = {
+            monthly: monthly,
+            sumAssured: sumAssured,
+            name: userData.analyzerName || 'Customer',
+            age: age,
+            amount: amount,
+            phone: userData.analyzerPhone || 'Not provided',
+            email: userData.analyzerEmail || 'Not provided',
+            paymentPeriod: userData.analyzerPaymentPeriod || '10'
+        };
+        
+        // Update buttons
+        document.getElementById('prevBtn').style.display = 'flex';
+        document.getElementById('nextBtn').style.display = 'none';
+        document.getElementById('calculateBtn').style.display = 'none';
+    }
 
-        function sendToWhatsApp(e) {
-            e.preventDefault();
-            
-            const name = userData.analyzerName || 'Customer';
-            const age = userData.analyzerAge || 'Not specified';
-            const amount = userData.analyzerAmount ? `KES ${parseInt(userData.analyzerAmount).toLocaleString()}` : 'Not specified';
-            const phone = userData.analyzerPhone || 'Not provided';
-            const paymentPeriod = userData.analyzerPaymentPeriod || '10 years';
-            
-            // Get EXACT premium from Excel data
-            const ageNum = parseInt(userData.analyzerAge);
-            const amountNum = parseInt(userData.analyzerAmount);
-            
-            let monthlyPremium = 0;
-            
-            if (premiumData[ageNum] && premiumData[ageNum][amountNum]) {
-                monthlyPremium = premiumData[ageNum][amountNum];
-                // NO ADJUSTMENTS - EXACT VALUE ONLY
-            }
-            
-            // WhatsApp message with exact premium
-            const message = `*WHOLE OF LIFE INSURANCE ANALYSIS*
+    function goBackToCalculator() {
+        currentStep = 1;
+        updateStepDisplay();
+    }
+
+    function sendToWhatsApp(e) {
+        e.preventDefault();
+        
+        const name = userData.analyzerName || 'Customer';
+        const age = userData.analyzerAge || 'Not specified';
+        const amount = userData.analyzerAmount ? `KES ${parseInt(userData.analyzerAmount).toLocaleString()}` : 'Not specified';
+        const phone = userData.analyzerPhone || 'Not provided';
+        const email = userData.analyzerEmail || 'Not provided';
+        const paymentPeriod = userData.analyzerPaymentPeriod || '10 years';
+        
+        // Get EXACT premium from Excel data
+        const ageNum = parseInt(userData.analyzerAge);
+        const amountNum = parseInt(userData.analyzerAmount);
+        
+        let monthlyPremium = 0;
+        
+        if (premiumData[ageNum] && premiumData[ageNum][amountNum]) {
+            monthlyPremium = premiumData[ageNum][amountNum];
+        }
+        
+        // WhatsApp message with exact premium
+        const message = `*WHOLE OF LIFE INSURANCE ANALYSIS*
 
 *CUSTOMER DETAILS*
 ────────────────
 *First Name:* ${name}
 *Age:* ${age} years
 *Phone:* ${phone}
+*Email:* ${email}
 *Cover Amount:* ${amount}
 *Payment Period:* ${paymentPeriod}
 *Insurance Type:* Whole of Life Insurance
@@ -2309,101 +2787,219 @@ ${userData.analyzerContactMethod || 'WhatsApp'}
 
 📞 *Call/WhatsApp:* +254 722 460 390
 📧 *Email:* bababimainsurance@gmail.com`;
-            
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappURL = `https://wa.me/254722460390?text=${encodedMessage}`;
-            
-            window.open(whatsappURL, '_blank');
-        }
+        
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappURL = `https://wa.me/254722460390?text=${encodedMessage}`;
+        
+        window.open(whatsappURL, '_blank');
+    }
 
-        // === ORIGINAL SITE FUNCTIONALITY ===
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.getElementById('navMenu');
-
-        function init() {
-            setupEventListeners();
-            setupSmoothScrolling();
-            initAnalyzer();
-        }
-
-        function setupEventListeners() {
-            mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-            
-            document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
-                link.addEventListener('click', closeMobileMenu);
-            });
-        }
-
-        function toggleMobileMenu() {
-            navMenu.classList.toggle('active');
-            if (navMenu.classList.contains('active')) {
-                mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
-                mobileMenuBtn.setAttribute('aria-expanded', 'true');
-                document.body.style.overflow = 'hidden';
-            } else {
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
+    // === WORKING PDF GENERATOR FUNCTION ===
+    function generatePDF() {
+        try {
+            // Check if PDF library is loaded
+            if (typeof window.jspdf === 'undefined') {
+                alert('PDF library is loading. Please try again in a moment.');
+                return;
             }
+            
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            // Get data
+            const data = window.currentPremiumData || {
+                monthly: 0,
+                sumAssured: 0,
+                name: 'Customer',
+                age: 'Not specified',
+                amount: 0,
+                phone: 'Not provided',
+                email: 'Not provided',
+                paymentPeriod: '10'
+            };
+            
+            // Header
+            doc.setFillColor(30, 58, 138);
+            doc.rect(0, 0, 210, 40, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(24);
+            doc.setFont('helvetica', 'bold');
+            doc.text('BABA BIMA INSURANCE', 105, 20, { align: 'center' });
+            doc.setFontSize(14);
+            doc.text('Whole of Life Insurance Analysis', 105, 30, { align: 'center' });
+            
+            // Client Info
+            doc.setTextColor(0, 0, 0);
+            doc.setFontSize(16);
+            doc.setFont('helvetica', 'bold');
+            doc.text('Client Analysis Report', 20, 50);
+            
+            // Client Details Box
+            doc.setDrawColor(30, 58, 138);
+            doc.setLineWidth(0.5);
+            doc.rect(20, 55, 170, 40);
+            
+            doc.setFontSize(11);
+            doc.setFont('helvetica', 'normal');
+            doc.text(`Client: ${data.name}`, 25, 62);
+            doc.text(`Age: ${data.age} years`, 25, 68);
+            doc.text(`Cover Amount: KES ${data.amount.toLocaleString()}`, 25, 74);
+            doc.text(`Phone: ${data.phone}`, 25, 80);
+            doc.text(`Email: ${data.email}`, 25, 86);
+            
+            // Premium Analysis
+            doc.setFontSize(14);
+            doc.setFont('helvetica', 'bold');
+            doc.text('Premium Analysis', 20, 105);
+            
+            doc.setFontSize(12);
+            doc.setFont('helvetica', 'normal');
+            doc.text(`Monthly Premium: KES ${data.monthly.toLocaleString()}`, 25, 115);
+            doc.text(`Payment Period: ${data.paymentPeriod} Years`, 25, 122);
+            
+            // Coverage Breakdown
+            doc.setFontSize(14);
+            doc.setFont('helvetica', 'bold');
+            doc.text('Coverage Breakdown', 20, 135);
+            
+            const coverageAmount = data.amount || 0;
+            const coverageData = [
+                { benefit: 'Sum Assured (Basic Coverage)', amount: coverageAmount },
+                { benefit: 'Annual Bonus (2% of Sum Assured)', amount: Math.round(coverageAmount * 0.02) },
+                { benefit: 'Total & Permanent Disability', amount: coverageAmount },
+                { benefit: 'Critical Illness Benefit (50%)', amount: Math.round(coverageAmount * 0.5) },
+                { benefit: 'Natural Death Benefit', amount: coverageAmount + Math.round(coverageAmount * 0.02) },
+                { benefit: 'Accidental Death Benefit (200%)', amount: (coverageAmount * 2) + Math.round(coverageAmount * 0.02) }
+            ];
+            
+            let yPos = 145;
+            coverageData.forEach((item, index) => {
+                doc.setFontSize(10);
+                doc.text(`${index + 1}. ${item.benefit}:`, 25, yPos);
+                doc.text(`KES ${item.amount.toLocaleString()}`, 150, yPos, { align: 'right' });
+                yPos += 7;
+            });
+            
+            // Total Coverage
+            const totalCoverage = coverageData.reduce((sum, item) => sum + item.amount, 0);
+            doc.setFontSize(12);
+            doc.setFont('helvetica', 'bold');
+            doc.text('Total Protection Value:', 25, yPos + 10);
+            doc.text(`KES ${totalCoverage.toLocaleString()}`, 150, yPos + 10, { align: 'right' });
+            
+            // Data Privacy Notice
+            doc.setFontSize(9);
+            doc.setFont('helvetica', 'italic');
+            doc.setTextColor(100, 100, 100);
+            doc.text('Data Privacy Notice: Your information is used solely to generate this', 20, yPos + 25);
+            doc.text('insurance analysis. We do not store, sell, or share your personal data.', 20, yPos + 30);
+            
+            // Footer
+            doc.setFontSize(9);
+            doc.setFont('helvetica', 'normal');
+            doc.setTextColor(100, 100, 100);
+            doc.text('This analysis was generated by Baba Bima Insurance Premium Analyzer', 105, 280, { align: 'center' });
+            doc.text('Contact: +254 722 460 390 | Email: bababimainsurance@gmail.com', 105, 285, { align: 'center' });
+            doc.text('Powered by MortApps Studios', 105, 290, { align: 'center' });
+            
+            // Save the PDF
+            const fileName = `BabaBima-Analysis-${data.name.replace(/\s+/g, '-')}-${Date.now()}.pdf`;
+            doc.save(fileName);
+            
+        } catch (error) {
+            console.error('PDF Generation Error:', error);
+            alert('Error generating PDF. Please try again or use the WhatsApp option.');
         }
+    }
 
-        function closeMobileMenu() {
-            navMenu.classList.remove('active');
+    // === ORIGINAL SITE FUNCTIONALITY ===
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    function init() {
+        setupEventListeners();
+        setupSmoothScrolling();
+        initAnalyzer();
+    }
+
+    function setupEventListeners() {
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        
+        document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+    }
+
+    function toggleMobileMenu() {
+        navMenu.classList.toggle('active');
+        if (navMenu.classList.contains('active')) {
+            mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        } else {
             mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             mobileMenuBtn.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
         }
+    }
 
-        function setupSmoothScrolling() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    
-                    if (href === '#home') {
-                        window.scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
-                        return;
-                    }
-                    
-                    e.preventDefault();
-                    
-                    const targetId = href;
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
+    function closeMobileMenu() {
+        navMenu.classList.remove('active');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+
+    function setupSmoothScrolling() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === '#home') {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    return;
+                }
+                
+                e.preventDefault();
+                
+                const targetId = href;
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
             });
+        });
+    }
+
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 100) {
+            header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+        } else {
+            header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.05)';
         }
+    });
 
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.05)';
-            }
-        });
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (navMenu.classList.contains('active') && 
+            !navMenu.contains(event.target) && 
+            !mobileMenuBtn.contains(event.target)) {
+            closeMobileMenu();
+        }
+    });
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            if (navMenu.classList.contains('active') && 
-                !navMenu.contains(event.target) && 
-                !mobileMenuBtn.contains(event.target)) {
-                closeMobileMenu();
-            }
-        });
-
-        // Initialize everything
-        document.addEventListener('DOMContentLoaded', init);
-    </script>
+    // Initialize everything
+    document.addEventListener('DOMContentLoaded', init);
+</script>S
 </body>
 </html>
