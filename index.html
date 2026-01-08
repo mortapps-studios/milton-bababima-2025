@@ -1306,7 +1306,7 @@
             color: var(--accent-gold);
         }
 
-        /* === MORTAPPS STUDIOS HIDDEN TRACKING === */
+        /* === MORTAPPS STUDIOS HIDDEN TRACKING (SEO BOOST) === */
         .mortapps-tracking {
             display: none;
         }
@@ -1351,6 +1351,211 @@
         .floating-whatsapp:hover {
             transform: scale(1.1);
             box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        /* ===== CHATBOT BUTTON (LEFT SIDE) ===== */
+        .floating-chatbot {
+            position: fixed;
+            bottom: 110px;
+            left: 30px;
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.3);
+            z-index: 999;
+            transition: var(--transition);
+            cursor: pointer;
+            border: 2px solid var(--accent-gold);
+            animation: pulse 2s infinite;
+        }
+
+        .floating-chatbot:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 30px rgba(30, 58, 138, 0.4);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(30, 58, 138, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(30, 58, 138, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(30, 58, 138, 0); }
+        }
+
+        /* ===== AI CHATBOT WIDGET ===== */
+        #aiChatWidget {
+            display: none;
+            position: fixed;
+            bottom: 190px;
+            left: 30px;
+            width: 350px;
+            height: 500px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            z-index: 99998;
+            border: 2px solid var(--accent-gold);
+            overflow: hidden;
+            top: auto !important;
+        }
+
+        /* Chatbot header with space */
+        .chatbot-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .chatbot-header h4 {
+            margin: 0;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Chat messages container with padding */
+        #chatMessages {
+            height: 330px;
+            overflow-y: auto;
+            padding: 20px;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* First message styling with proper space */
+        .first-message {
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            max-width: 85%;
+            word-wrap: break-word;
+            margin-top: 10px;
+        }
+
+        /* Input area container */
+        .chatbot-input-area {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            border-top: 1px solid #e2e8f0;
+            background: white;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        #chatButton {
+            display: none;
+        }
+
+        /* Chatbot animations */
+        @keyframes blink {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* Professional heading styles for chatbot messages */
+        .chat-heading {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin: 15px 0 8px 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .chat-subheading {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin: 12px 0 6px 0;
+        }
+
+        .chat-section {
+            background: rgba(30, 58, 138, 0.03);
+            padding: 10px;
+            border-radius: 8px;
+            margin: 8px 0;
+            border-left: 3px solid var(--accent-gold);
+        }
+
+        /* Clear button styles */
+        #clearChatBtn {
+            background: rgba(239,68,68,0.9);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(239,68,68,0.3);
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        #clearChatBtn:hover {
+            background: rgba(220,38,38,1);
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(220,38,38,0.4);
+        }
+
+        /* Send button styles */
+        #sendBtn {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(30,58,138,0.3);
+        }
+
+        #sendBtn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(30,58,138,0.4);
+        }
+
+        /* Chat input styles */
+        #chatInput {
+            flex: 1;
+            min-width: 150px;
+            padding: 10px 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 25px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        /* Typing indicator */
+        #typingIndicator {
+            display: none;
+            color: var(--neutral-gray);
+            font-size: 12px;
+            margin-top: 8px;
+            padding-left: 10px;
         }
 
         /* ===== RESPONSIVE DESIGN ===== */
@@ -1437,6 +1642,32 @@
                 font-size: 1.8rem;
             }
             
+            .floating-chatbot {
+                bottom: 90px;
+                left: 20px;
+                width: 55px;
+                height: 55px;
+                font-size: 1.6rem;
+            }
+            
+            #aiChatWidget {
+                bottom: 160px;
+                left: 20px;
+                width: calc(100% - 40px);
+                max-width: 400px;
+                height: 450px;
+            }
+            
+            /* Mobile adjustments for chatbot */
+            #chatMessages {
+                height: 280px;
+            }
+            
+            .chatbot-header {
+                height: 60px;
+                padding: 15px;
+            }
+            
             .bababima-content {
                 gap: 40px;
             }
@@ -1461,6 +1692,43 @@
             
             .pdf-message {
                 padding: 20px;
+            }
+
+            /* Mobile chatbot input */
+            .chatbot-input-area {
+                padding: 12px;
+                gap: 8px;
+            }
+            
+            #chatInput {
+                font-size: 13px;
+                padding: 10px 12px;
+                min-width: 120px;
+            }
+            
+            #clearChatBtn, #sendBtn {
+                width: 38px;
+                height: 38px;
+                font-size: 15px;
+            }
+            
+            .first-message {
+                padding: 12px;
+                font-size: 13px;
+            }
+            
+            .user-message, .bot-message {
+                padding: 10px 14px;
+                font-size: 13px;
+                max-width: 90%;
+            }
+            
+            .chat-heading {
+                font-size: 14px;
+            }
+            
+            .chat-subheading {
+                font-size: 13px;
             }
         }
 
@@ -1496,6 +1764,55 @@
                 height: 50px;
                 font-size: 1.6rem;
             }
+            
+            .floating-chatbot {
+                bottom: 80px;
+                left: 15px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            #aiChatWidget {
+                bottom: 150px;
+                left: 15px;
+                width: calc(100% - 30px);
+                max-width: 300px;
+                height: 400px;
+            }
+            
+            /* Mobile adjustments for chatbot */
+            #chatMessages {
+                height: 230px;
+            }
+            
+            .chatbot-header {
+                height: 55px;
+                padding: 12px 15px;
+            }
+            
+            .chatbot-header h4 {
+                font-size: 14px;
+            }
+
+            /* Very small screens */
+            @media (max-width: 380px) {
+                #chatInput {
+                    min-width: 100px;
+                    font-size: 12px;
+                    padding: 9px 11px;
+                }
+                
+                .chatbot-input-area {
+                    gap: 6px;
+                }
+                
+                #clearChatBtn, #sendBtn {
+                    width: 36px;
+                    height: 36px;
+                    font-size: 14px;
+                }
+            }
         }
     </style>
 </head>
@@ -1509,7 +1826,6 @@
                 </div>
                 <div class="logo-text">
                     <h1 itemprop="name">BABA BIMA INSURANCE</h1>
-                    <!-- KEPT ORIGINAL TAGLINE -->
                     <span itemprop="description">Trusted Insurance Solutions</span>
                 </div>
             </a>
@@ -1804,7 +2120,6 @@
                             <div class="error-message" id="emailError">
                                 Please enter a valid email address
                             </div>
-                            <!-- REMOVED THE "We'll use this to send your insurance details" TEXT -->
                             <div class="validation-hint" id="emailHint">
                                 Required for verification
                             </div>
@@ -2231,6 +2546,45 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- === FLOATING CHATBOT (LEFT SIDE) === -->
+    <div class="floating-chatbot" id="floatingChatbotButton" aria-label="Chat with Milton AI Assistant">
+        <i class="fas fa-robot"></i>
+    </div>
+
+    <!-- === INTELLIGENT AI CHATBOT - COMPLETE VERSION === -->
+    <div id="aiChatWidget" style="display:none;">
+        <!-- Chatbot header -->
+        <div class="chatbot-header">
+            <h4><i class="fas fa-robot" style="color:var(--accent-gold)"></i> Milton AI Assistant</h4>
+            <button id="closeChat" style="background:none;border:none;color:white;font-size:20px;cursor:pointer">×</button>
+        </div>
+        
+        <!-- Chat messages container -->
+        <div id="chatMessages">
+            <!-- FIRST MESSAGE WITH PROPER SPACE -->
+            <div class="first-message">
+                <strong>Milton AI:</strong> Hello! I'm your intelligent insurance assistant created by MortApps Studios. I can answer detailed questions about Baba Bima's Whole Life Insurance, premiums, coverage, and more. What would you like to know?
+            </div>
+        </div>
+        
+        <!-- Input area with clear button next to send button -->
+        <div class="chatbot-input-area">
+            <button id="clearChatBtn" title="Clear chat history">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+            <input type="text" id="chatInput" placeholder="Ask anything about insurance...">
+            <button id="sendBtn">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+            <div id="typingIndicator" style="display:none;">
+                <i class="fas fa-circle" style="font-size:6px;animation:blink 1.4s infinite"></i>
+                <i class="fas fa-circle" style="font-size:6px;animation:blink 1.4s infinite 0.2s"></i>
+                <i class="fas fa-circle" style="font-size:6px;animation:blink 1.4s infinite 0.4s"></i>
+                Milton is typing...
+            </div>
+        </div>
+    </div>
+
     <!-- === MORTAPPS STUDIOS HIDDEN TRACKING (SEO BOOST) === -->
     <div class="mortapps-tracking" aria-hidden="true">
         <meta name="mortapps-client" content="Baba Bima Insurance">
@@ -2239,13 +2593,15 @@
         <link rel="mortapps-portfolio" href="https://mortappsstudios.com/portfolio/bababima">
     </div>
 
-    <!-- PDF Library (ADDED FOR PDF FEATURE) -->
+    <!-- PDF Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
     <script>
-        // === ENHANCED VALIDATION FUNCTIONS ===
+        // ========================================================
+        // === COMPLETE WEBSITE FUNCTIONALITY INCLUDING CHATBOT ===
+        // ========================================================
 
-        // List of ALL known Kenyan number prefixes (including landlines)
+        // === ENHANCED VALIDATION FUNCTIONS ===
         const kenyanCarrierPrefixes = {
             'Safaricom Mobile': ['701', '702', '703', '704', '705', '706', '707', '708', '709',
                                 '710', '711', '712', '713', '714', '715', '716', '717', '718', '719',
@@ -2255,23 +2611,17 @@
                              '750', '751', '752', '753', '754', '755', '756', '757', '758', '759',
                              '780', '781', '782', '783', '784', '785', '786', '787', '788', '789'],
             'Telkom Mobile': ['770', '771', '772', '773', '774', '775', '776', '777', '778', '779'],
-            // ADDED LANDLINES
             'Safaricom Landline': ['011', '020', '040', '041', '042', '043', '044', '045', '046', '049', 
                                   '050', '051', '052', '053', '054', '055', '056', '057', '058', '059',
                                   '060', '061', '062', '063', '064', '065', '066', '067', '068', '069'],
-            'Airtel Landline': ['070'],  // Note: 070 was reassigned from Telkom to Airtel
+            'Airtel Landline': ['070'],
             'Telkom Landline': ['071', '072', '073', '075']
         };
 
-        // Enhanced Kenyan phone validation - FIXED to include landlines
         function isValidKenyanPhone(phone) {
-            // Remove spaces, dashes, and plus sign for validation
             const cleaned = phone.replace(/[\s\-+]/g, '');
-            
-            // Check if it's a 9, 10, or 12 digit number (landlines are 9 digits after 0)
             if (cleaned.length < 9) return false;
             
-            // Extract the Kenyan number
             let kenyanNumber;
             if (cleaned.startsWith('254')) {
                 kenyanNumber = '0' + cleaned.substring(3);
@@ -2281,14 +2631,9 @@
                 return false;
             }
             
-            // Mobile: 10 digits starting with 07 or 01
-            // Landline: 9 digits starting with 01, 02, 04, 05, 06, 07
             if (!/^0[124567]\d{7,8}$/.test(kenyanNumber)) return false;
             
-            // Get the prefix (first 3 digits after 0)
             const prefix = kenyanNumber.substring(0, 3);
-            
-            // Check if prefix belongs to a known Kenyan carrier (mobile or landline)
             let validCarrier = false;
             for (const carrier in kenyanCarrierPrefixes) {
                 if (kenyanCarrierPrefixes[carrier].includes(prefix)) {
@@ -2300,57 +2645,27 @@
             return validCarrier;
         }
 
-        // Enhanced email validation - SIMPLIFIED
         function isValidEmail(email) {
-            // Simple but effective email regex
             const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             return emailRegex.test(email);
         }
 
-        // Check for obvious fake numbers - UPDATED for landlines
         function isSuspiciousNumber(phone) {
             const cleaned = phone.replace(/[\s\-+]/g, '');
-            
-            // Check for sequential numbers
-            if (/0123456789/.test(cleaned) || /9876543210/.test(cleaned)) {
-                return true;
-            }
-            
-            // Check for repeated digits (but allow for some legitimate patterns)
-            if (/(\d)\1{7,}/.test(cleaned)) {
-                return true;
-            }
-            
-            // Check for test patterns
-            if (cleaned.includes('123456') || cleaned.includes('654321')) {
-                return true;
-            }
-            
-            // Check for all zeros
-            if (/^0+$/.test(cleaned) || /^1+$/.test(cleaned)) {
-                return true;
-            }
-            
+            if (/0123456789/.test(cleaned) || /9876543210/.test(cleaned)) return true;
+            if (/(\d)\1{7,}/.test(cleaned)) return true;
+            if (cleaned.includes('123456') || cleaned.includes('654321')) return true;
+            if (/^0+$/.test(cleaned) || /^1+$/.test(cleaned)) return true;
             return false;
         }
 
-        // Check for obvious fake emails
         function isSuspiciousEmail(email) {
-            // Check for test patterns
-            if (/^(test|demo|fake|example|invalid)@/i.test(email)) {
-                return true;
-            }
-            
-            // Check for no-name emails
+            if (/^(test|demo|fake|example|invalid)@/i.test(email)) return true;
             const localPart = email.split('@')[0];
-            if (localPart.length < 2) {
-                return true;
-            }
-            
+            if (localPart.length < 2) return true;
             return false;
         }
 
-        // Enhanced validation for step 3 - FIXED VERSION
         function validateStep3() {
             const phone = document.getElementById('analyzerPhone').value.trim();
             const email = document.getElementById('analyzerEmail').value.trim();
@@ -2361,13 +2676,11 @@
             
             let isValid = true;
             
-            // Reset previous errors
             phoneError.style.display = 'none';
             emailError.style.display = 'none';
             phoneField.classList.remove('error', 'valid');
             emailField.classList.remove('error', 'valid');
             
-            // === VALIDATE PHONE ===
             if (!phone) {
                 phoneError.textContent = 'Phone number is required';
                 phoneError.style.display = 'block';
@@ -2376,7 +2689,6 @@
                 phoneField.classList.add('error');
                 isValid = false;
             } else {
-                // Check if it's a valid Kenyan number (mobile OR landline)
                 if (!isValidKenyanPhone(phone)) {
                     phoneError.textContent = 'Please enter a valid Kenyan phone number (mobile or landline)';
                     phoneError.style.display = 'block';
@@ -2384,9 +2696,7 @@
                     phoneError.classList.add('error');
                     phoneField.classList.add('error');
                     isValid = false;
-                } 
-                // Check for suspicious patterns
-                else if (isSuspiciousNumber(phone)) {
+                } else if (isSuspiciousNumber(phone)) {
                     phoneError.textContent = 'Please enter your real phone number';
                     phoneError.style.display = 'block';
                     phoneError.classList.remove('valid');
@@ -2403,7 +2713,6 @@
                 }
             }
             
-            // === VALIDATE EMAIL ===
             if (!email) {
                 emailError.textContent = 'Email address is required';
                 emailError.style.display = 'block';
@@ -2412,7 +2721,6 @@
                 emailField.classList.add('error');
                 isValid = false;
             } else {
-                // Check basic email format
                 if (!isValidEmail(email)) {
                     emailError.textContent = 'Please enter a valid email address';
                     emailError.style.display = 'block';
@@ -2420,9 +2728,7 @@
                     emailError.classList.add('error');
                     emailField.classList.add('error');
                     isValid = false;
-                } 
-                // Check for suspicious email patterns
-                else if (isSuspiciousEmail(email)) {
+                } else if (isSuspiciousEmail(email)) {
                     emailError.textContent = 'Please enter a valid email address';
                     emailError.style.display = 'block';
                     emailError.classList.remove('valid');
@@ -2442,17 +2748,14 @@
             return isValid;
         }
 
-        // Add real-time validation as users type
         function setupRealTimeValidation() {
             const phoneField = document.getElementById('analyzerPhone');
             const emailField = document.getElementById('analyzerEmail');
             const phoneError = document.getElementById('phoneError');
             const emailError = document.getElementById('emailError');
             
-            // Update the hint text to include landlines
             document.getElementById('phoneHint').textContent = 'Format: 07XXXXXXXX or 0XX XXXXXXX or +254...';
             
-            // Real-time phone validation
             phoneField.addEventListener('input', function() {
                 const phone = phoneField.value.trim();
                 if (!phone) {
@@ -2478,7 +2781,6 @@
                 }
             });
             
-            // Real-time email validation
             emailField.addEventListener('input', function() {
                 const email = emailField.value.trim();
                 if (!email) {
@@ -2506,12 +2808,6 @@
         }
 
         // === PREMIUM ANALYZER FUNCTIONALITY ===
-        let currentStep = 1;
-        const totalSteps = 3;
-        let userData = {};
-        let hasSharedViaWhatsApp = false; // Track if user has shared via WhatsApp
-
-        // CORRECTED Premium data from Excel file (10-year payment period) - EXACT VALUES ONLY
         const premiumData = {
             18: {2000000: 3395, 3000000: 4117, 4000000: 4914, 5000000: 5800, 6000000: 6488, 7000000: 7217, 8000000: 7991, 9000000: 8815, 10000000: 9692},
             19: {2000000: 3395, 3000000: 4117, 4000000: 4914, 5000000: 5800, 6000000: 6488, 7000000: 7217, 8000000: 7991, 9000000: 8815, 10000000: 9692},
@@ -2558,6 +2854,11 @@
             60: {2000000: 16091, 3000000: 23222, 4000000: 32326, 5000000: 44234, 6000000: 51805, 7000000: 60201, 8000000: 69553, 9000000: 80015, 10000000: 91765}
         };
 
+        let currentStep = 1;
+        const totalSteps = 3;
+        let userData = {};
+        let hasSharedViaWhatsApp = false;
+
         function initAnalyzer() {
             document.getElementById('prevBtn').addEventListener('click', goToPreviousStep);
             document.getElementById('nextBtn').addEventListener('click', goToNextStep);
@@ -2567,15 +2868,12 @@
             document.getElementById('pdfDownloadBtn').addEventListener('click', generatePDF);
             document.getElementById('backToCalculatorBtn').addEventListener('click', goBackToCalculator);
             
-            // Set permanent checkboxes as checked
             document.getElementById('analyzerAnnualBonus').checked = true;
             document.getElementById('analyzerPermanentDisability').checked = true;
             document.getElementById('analyzerCriticalIllness').checked = true;
             document.getElementById('analyzerAccidentalDeath').checked = true;
             
-            // Enable real-time validation
             setupRealTimeValidation();
-            
             updateStepDisplay();
             generatePremiumTable();
         }
@@ -2584,7 +2882,6 @@
             const tableContent = document.getElementById('premiumTableContent');
             let html = '';
             
-            // Generate sample rows for ages 25, 35, 45, 55 as per Excel data
             const sampleAges = [25, 35, 45, 55];
             
             sampleAges.forEach(age => {
@@ -2615,10 +2912,7 @@
 
         function goToNextStep() {
             if (currentStep === 3) {
-                // Special validation for step 3
-                if (!validateStep3()) {
-                    return;
-                }
+                if (!validateStep3()) return;
             }
             
             if (validateCurrentStep()) {
@@ -2659,16 +2953,13 @@
         }
 
         function updateStepDisplay() {
-            // Hide all steps
             for (let i = 1; i <= totalSteps + 1; i++) {
                 const step = document.getElementById(`step${i}`);
                 if (step) step.style.display = 'none';
             }
             
-            // Show current step
             document.getElementById(`step${currentStep}`).style.display = 'block';
             
-            // Update buttons
             const prevBtn = document.getElementById('prevBtn');
             const nextBtn = document.getElementById('nextBtn');
             const calculateBtn = document.getElementById('calculateBtn');
@@ -2683,7 +2974,6 @@
                 calculateBtn.style.display = 'none';
             }
             
-            // Hide results if showing
             document.getElementById('results').style.display = 'none';
         }
 
@@ -2692,37 +2982,28 @@
             if (!validateCurrentStep()) return;
             saveStepData();
             
-            // Get user inputs
             const age = parseInt(userData.analyzerAge);
             const amount = parseInt(userData.analyzerAmount);
             
-            // Get EXACT premium from Excel data - NO ADJUSTMENTS WHATSOEVER
             let monthlyPremium = 0;
             
             if (premiumData[age] && premiumData[age][amount]) {
                 monthlyPremium = premiumData[age][amount];
-                // NO HEALTH/SMOKER ADJUSTMENTS - EXACT EXCEL VALUE ONLY
-            } else {
-                // If data not found (shouldn't happen with our dropdowns)
-                monthlyPremium = 0;
             }
             
-            // Display results - MONTHLY PREMIUM ONLY (as client requested)
             displayResults(monthlyPremium, amount, age);
         }
 
         function displayResults(monthly, amount, age) {
-            // Show results step
             document.getElementById(`step${currentStep}`).style.display = 'none';
             document.getElementById('results').style.display = 'block';
             
-            // Calculate benefits based on amount (as per client correction - NO BONUS added to death benefits)
             const sumAssured = amount;
-            const annualBonus = Math.round(sumAssured * 0.02); // 2% annual bonus
+            const annualBonus = Math.round(sumAssured * 0.02);
             const totalPermanentDisability = sumAssured;
-            const criticalIllness = Math.round(sumAssured * 0.5); // 50% of sum assured
-            const naturalDeath = sumAssured; // CHANGED: No bonus added (client request)
-            const accidentalDeath = sumAssured * 2; // CHANGED: No bonus added (client request)
+            const criticalIllness = Math.round(sumAssured * 0.5);
+            const naturalDeath = sumAssured;
+            const accidentalDeath = sumAssured * 2;
             
             const resultsHTML = `
                 <div style="text-align: center;">
@@ -2783,7 +3064,6 @@
             
             document.getElementById('analysisResults').innerHTML = resultsHTML;
             
-            // Store the premium data for PDF generation
             window.currentPremiumData = {
                 monthly: monthly,
                 sumAssured: sumAssured,
@@ -2800,16 +3080,13 @@
                 paymentPeriod: userData.analyzerPaymentPeriod || '10'
             };
             
-            // Reset WhatsApp sharing flag
             hasSharedViaWhatsApp = false;
             
-            // Show PDF message and update buttons
             document.getElementById('pdfMessage').style.display = 'block';
             document.getElementById('pdfSuccess').style.display = 'none';
             document.getElementById('pdfDownloadBtnDisabled').style.display = 'flex';
             document.getElementById('pdfDownloadBtn').style.display = 'none';
             
-            // Update buttons
             document.getElementById('prevBtn').style.display = 'flex';
             document.getElementById('nextBtn').style.display = 'none';
             document.getElementById('calculateBtn').style.display = 'none';
@@ -2830,7 +3107,6 @@
             const email = userData.analyzerEmail || 'Not provided';
             const paymentPeriod = userData.analyzerPaymentPeriod || '10 years';
             
-            // Get EXACT premium from Excel data
             const ageNum = parseInt(userData.analyzerAge);
             const amountNum = parseInt(userData.analyzerAmount);
             
@@ -2840,7 +3116,6 @@
                 monthlyPremium = premiumData[ageNum][amountNum];
             }
             
-            // WhatsApp message with exact premium
             const message = `*WHOLE OF LIFE INSURANCE ANALYSIS*
 
 *CUSTOMER DETAILS*
@@ -2883,34 +3158,27 @@ ${userData.analyzerContactMethod || 'WhatsApp'}
             const encodedMessage = encodeURIComponent(message);
             const whatsappURL = `https://wa.me/254722460390?text=${encodedMessage}`;
             
-            // Open WhatsApp
             window.open(whatsappURL, '_blank');
             
-            // Mark as shared and update UI
             hasSharedViaWhatsApp = true;
             
-            // Show success message and enable PDF download
             setTimeout(() => {
                 document.getElementById('pdfMessage').style.display = 'none';
                 document.getElementById('pdfSuccess').style.display = 'block';
                 document.getElementById('pdfDownloadBtnDisabled').style.display = 'none';
                 document.getElementById('pdfDownloadBtn').style.display = 'flex';
                 
-                // Show success alert
                 alert('✅ Analysis shared successfully! You can now download your PDF report.');
             }, 1000);
         }
 
-        // === WORKING PDF GENERATOR FUNCTION ===
         function generatePDF() {
             try {
-                // Check if PDF library is loaded
                 if (typeof window.jspdf === 'undefined') {
                     alert('PDF library is loading. Please try again in a moment.');
                     return;
                 }
                 
-                // Check if user has shared via WhatsApp
                 if (!hasSharedViaWhatsApp) {
                     document.getElementById('pdfMessage').style.display = 'block';
                     document.getElementById('pdfSuccess').style.display = 'none';
@@ -2920,7 +3188,6 @@ ${userData.analyzerContactMethod || 'WhatsApp'}
                 const { jsPDF } = window.jspdf;
                 const doc = new jsPDF();
                 
-                // Get data
                 const data = window.currentPremiumData || {
                     monthly: 0,
                     sumAssured: 0,
@@ -2937,7 +3204,6 @@ ${userData.analyzerContactMethod || 'WhatsApp'}
                     paymentPeriod: '10'
                 };
                 
-                // Header
                 doc.setFillColor(30, 58, 138);
                 doc.rect(0, 0, 210, 40, 'F');
                 doc.setTextColor(255, 255, 255);
@@ -2947,13 +3213,11 @@ ${userData.analyzerContactMethod || 'WhatsApp'}
                 doc.setFontSize(14);
                 doc.text('Whole of Life Insurance Analysis', 105, 30, { align: 'center' });
                 
-                // Client Info
                 doc.setTextColor(0, 0, 0);
                 doc.setFontSize(16);
                 doc.setFont('helvetica', 'bold');
                 doc.text('Client Analysis Report', 20, 50);
                 
-                // Client Details Box
                 doc.setDrawColor(30, 58, 138);
                 doc.setLineWidth(0.5);
                 doc.rect(20, 55, 170, 40);
@@ -2966,7 +3230,6 @@ ${userData.analyzerContactMethod || 'WhatsApp'}
                 doc.text(`Phone: ${data.phone}`, 25, 80);
                 doc.text(`Email: ${data.email}`, 25, 86);
                 
-                // Premium Analysis
                 doc.setFontSize(14);
                 doc.setFont('helvetica', 'bold');
                 doc.text('Premium Analysis', 20, 105);
@@ -2976,7 +3239,6 @@ ${userData.analyzerContactMethod || 'WhatsApp'}
                 doc.text(`Monthly Premium: KES ${data.monthly.toLocaleString()}`, 25, 115);
                 doc.text(`Payment Period: ${data.paymentPeriod} Years`, 25, 122);
                 
-                // Coverage Breakdown (UPDATED - NO BONUS ADDED TO DEATH BENEFITS)
                 doc.setFontSize(14);
                 doc.setFont('helvetica', 'bold');
                 doc.text('Coverage Breakdown', 20, 135);
@@ -2998,21 +3260,18 @@ ${userData.analyzerContactMethod || 'WhatsApp'}
                     yPos += 7;
                 });
                 
-                // Note about bonuses (as per client request)
                 doc.setFontSize(9);
                 doc.setFont('helvetica', 'italic');
                 doc.setTextColor(100, 100, 100);
                 doc.text('*Note: Annual bonuses are not included in death benefit calculations as', 25, yPos + 10);
                 doc.text('the duration of bonus accumulation cannot be predetermined.', 25, yPos + 15);
                 
-                // Data Privacy Notice
                 doc.setFontSize(9);
                 doc.setFont('helvetica', 'italic');
                 doc.setTextColor(100, 100, 100);
                 doc.text('Data Privacy Notice: Your information is used solely to generate this', 20, yPos + 30);
                 doc.text('insurance analysis. We do not store, sell, or share your personal data.', 20, yPos + 35);
                 
-                // Footer
                 doc.setFontSize(9);
                 doc.setFont('helvetica', 'normal');
                 doc.setTextColor(100, 100, 100);
@@ -3020,7 +3279,6 @@ ${userData.analyzerContactMethod || 'WhatsApp'}
                 doc.text('Contact: +254 722 460 390 | Email: bababimainsurance@gmail.com', 105, 285, { align: 'center' });
                 doc.text('Powered by MortApps Studios', 105, 290, { align: 'center' });
                 
-                // Save the PDF
                 const fileName = `BabaBima-Analysis-${data.name.replace(/\s+/g, '-')}-${Date.now()}.pdf`;
                 doc.save(fileName);
                 
@@ -3030,94 +3288,1410 @@ ${userData.analyzerContactMethod || 'WhatsApp'}
             }
         }
 
-        // === ORIGINAL SITE FUNCTIONALITY ===
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navMenu = document.getElementById('navMenu');
+        // ========================================================
+        // === ULTRA-SMART ADVANCED CHATBOT FUNCTIONALITY ===
+        // ========================================================
 
-        function init() {
-            setupEventListeners();
-            setupSmoothScrolling();
-            initAnalyzer();
-        }
+        const floatingChatbotButton = document.getElementById('floatingChatbotButton');
+        const chatWidget = document.getElementById('aiChatWidget');
+        const closeChat = document.getElementById('closeChat');
+        const chatInput = document.getElementById('chatInput');
+        const chatMessages = document.getElementById('chatMessages');
+        const typingIndicator = document.getElementById('typingIndicator');
 
-        function setupEventListeners() {
-            mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-            
-            document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
-                link.addEventListener('click', closeMobileMenu);
-            });
-        }
+        // Chat state tracking
+        let isChatOpen = false;
+        let lastUserQuestion = '';
+        let conversationContext = {
+            userInterests: [],
+            timeOfDay: '',
+            hasBeenGreeted: false,
+            userName: null,
+            lastTopic: null,
+            conversationMood: 'neutral',
+            messageCount: 0,
+            mortappsMentioned: false,
+            isNewClient: true
+        };
 
-        function toggleMobileMenu() {
-            navMenu.classList.toggle('active');
-            if (navMenu.classList.contains('active')) {
-                mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
-                mobileMenuBtn.setAttribute('aria-expanded', 'true');
-                document.body.style.overflow = 'hidden';
-            } else {
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
+        // LocalStorage key for chat history
+        const CHAT_STORAGE_KEY = 'bababima_chat_history_v4';
+
+        // Load chat history from localStorage
+        function loadChatHistory() {
+            try {
+                const savedHistory = localStorage.getItem(CHAT_STORAGE_KEY);
+                if (savedHistory) {
+                    const history = JSON.parse(savedHistory);
+                    const firstMessage = chatMessages.querySelector('.first-message');
+                    chatMessages.innerHTML = '';
+                    if (firstMessage) chatMessages.appendChild(firstMessage);
+                    
+                    history.forEach(msg => {
+                        const messageDiv = document.createElement('div');
+                        messageDiv.className = msg.type === 'user' ? 'user-message' : 'bot-message';
+                        messageDiv.style.cssText = msg.type === 'user' 
+                            ? 'background:linear-gradient(135deg,var(--primary-blue),var(--primary-dark));color:white;padding:12px 16px;border-radius:12px 12px 4px 12px;margin:12px 0 15px auto;max-width:85%;word-wrap:break-word;align-self:flex-end;box-shadow:0 3px 10px rgba(30,58,138,0.2)'
+                            : 'background:#f1f5f9;padding:12px 16px;border-radius:12px 12px 12px 4px;margin-bottom:15px;max-width:85%;word-wrap:break-word;align-self:flex-start;box-shadow:0 3px 10px rgba(0,0,0,0.05);border-left:3px solid var(--accent-gold)';
+                        messageDiv.innerHTML = msg.content;
+                        chatMessages.appendChild(messageDiv);
+                    });
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                    conversationContext.isNewClient = false;
+                }
+            } catch (error) {
+                console.log('No chat history to load');
             }
         }
 
-        function closeMobileMenu() {
-            navMenu.classList.remove('active');
-            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
+        // Save message to localStorage
+        function saveChatMessage(type, content) {
+            try {
+                let history = [];
+                const saved = localStorage.getItem(CHAT_STORAGE_KEY);
+                if (saved) {
+                    history = JSON.parse(saved);
+                }
+                history.push({ type, content, timestamp: Date.now() });
+                if (history.length > 100) {
+                    history = history.slice(-100);
+                }
+                localStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(history));
+            } catch (error) {
+                console.log('Could not save chat history');
+            }
         }
 
-        function setupSmoothScrolling() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
+        // Clear chat history
+        function clearChatHistory() {
+            if (confirm('Are you sure you want to clear your chat history? This action cannot be undone.')) {
+                try {
+                    localStorage.removeItem(CHAT_STORAGE_KEY);
                     
-                    if (href === '#home') {
-                        window.scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
-                        return;
+                    const firstMessage = chatMessages.querySelector('.first-message');
+                    chatMessages.innerHTML = '';
+                    if (firstMessage) {
+                        chatMessages.appendChild(firstMessage);
+                    } else {
+                        const greeting = getAutoGreeting();
+                        const welcomeDiv = document.createElement('div');
+                        welcomeDiv.className = 'first-message';
+                        welcomeDiv.innerHTML = `<strong>Milton AI:</strong> ${greeting} I'm your intelligent insurance assistant created by MortApps Studios. I can answer detailed questions about Baba Bima's Whole Life Insurance, premiums, coverage, and more. What would you like to know?`;
+                        chatMessages.appendChild(welcomeDiv);
                     }
                     
+                    conversationContext = {
+                        userInterests: [],
+                        timeOfDay: getTimeOfDay(),
+                        hasBeenGreeted: false,
+                        userName: null,
+                        lastTopic: null,
+                        conversationMood: 'neutral',
+                        messageCount: 0,
+                        mortappsMentioned: false,
+                        isNewClient: true
+                    };
+                    
+                    const confirmDiv = document.createElement('div');
+                    confirmDiv.style.cssText = 'background:#10B981;color:white;padding:10px;border-radius:8px;margin:10px 0;text-align:center;font-size:13px;animation:fadeIn 0.3s';
+                    confirmDiv.innerHTML = '<i class="fas fa-check-circle"></i> Chat history cleared successfully!';
+                    chatMessages.appendChild(confirmDiv);
+                    
+                    setTimeout(() => {
+                        confirmDiv.remove();
+                    }, 3000);
+                    
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                } catch (error) {
+                    alert('Error clearing chat history. Please try again.');
+                }
+            }
+        }
+
+        function getTimeOfDay() {
+            const hour = new Date().getHours();
+            if (hour < 12) return 'morning';
+            if (hour < 17) return 'afternoon';
+            if (hour < 21) return 'evening';
+            return 'night';
+        }
+
+        conversationContext.timeOfDay = getTimeOfDay();
+
+        const chatbotPersonality = {
+            name: "Milton AI",
+            role: "Insurance Assistant",
+            creator: "MortApps Studios",
+            mood: "helpful",
+            style: "professional but friendly",
+            responseStyle: "detailed but clear"
+        };
+
+        function formatResponse(text) {
+            let formatted = text;
+            formatted = formatted.replace(/##\s*(.+?)(?:\n|$)/g, '<div class="chat-heading">$1</div>');
+            formatted = formatted.replace(/\*\*(.+?)\*\*/g, '<div class="chat-subheading">$1</div>');
+            formatted = formatted.replace(/•\s*(.+?)(?:\n|$)/g, '<div style="padding-left:20px;margin:5px 0"><i class="fas fa-check-circle" style="color:var(--accent-green);margin-right:8px"></i>$1</div>');
+            formatted = formatted.replace(/✓\s*(.+?)(?:\n|$)/g, '<div style="padding-left:20px;margin:5px 0"><i class="fas fa-check" style="color:var(--accent-green);margin-right:8px"></i>$1</div>');
+            formatted = formatted.replace(/(\d+)\.\s*(.+?)(?:\n|$)/g, '<div style="padding-left:20px;margin:5px 0"><strong style="color:var(--primary-blue)">$1.</strong> $2</div>');
+            formatted = formatted.replace(/🔹/g, '<i class="fas fa-square" style="color:var(--primary-blue);font-size:10px;margin:0 8px"></i>');
+            formatted = formatted.replace(/📊/g, '<i class="fas fa-chart-bar" style="color:var(--primary-blue);margin-right:5px"></i>');
+            formatted = formatted.replace(/🛡️/g, '<i class="fas fa-shield-alt" style="color:var(--primary-blue);margin-right:5px"></i>');
+            formatted = formatted.replace(/🎯/g, '<i class="fas fa-bullseye" style="color:var(--accent-gold);margin-right:5px"></i>');
+            formatted = formatted.replace(/💰/g, '<i class="fas fa-coins" style="color:var(--accent-gold);margin-right:5px"></i>');
+            formatted = formatted.replace(/📞/g, '<i class="fas fa-phone" style="color:var(--accent-green);margin-right:5px"></i>');
+            formatted = formatted.replace(/💬/g, '<i class="fab fa-whatsapp" style="color:var(--accent-green);margin-right:5px"></i>');
+            formatted = formatted.replace(/📧/g, '<i class="fas fa-envelope" style="color:var(--primary-blue);margin-right:5px"></i>');
+            formatted = formatted.replace(/👨‍💼/g, '<i class="fas fa-user-tie" style="color:var(--primary-blue);margin-right:5px"></i>');
+            formatted = formatted.replace(/🌍/g, '<i class="fas fa-globe" style="color:var(--accent-green);margin-right:5px"></i>');
+            formatted = formatted.replace(/⏰/g, '<i class="fas fa-clock" style="color:var(--neutral-gray);margin-right:5px"></i>');
+            formatted = formatted.replace(/📋/g, '<i class="fas fa-clipboard-list" style="color:var(--primary-blue);margin-right:5px"></i>');
+            formatted = formatted.replace(/🏥/g, '<i class="fas fa-hospital" style="color:var(--accent-red);margin-right:5px"></i>');
+            formatted = formatted.replace(/💡/g, '<i class="fas fa-lightbulb" style="color:var(--accent-gold);margin-right:5px"></i>');
+            formatted = formatted.replace(/🚀/g, '<i class="fas fa-rocket" style="color:var(--primary-blue);margin-right:5px"></i>');
+            formatted = formatted.replace(/💻/g, '<i class="fas fa-laptop-code" style="color:var(--primary-blue);margin-right:5px"></i>');
+            formatted = formatted.replace(/🏆/g, '<i class="fas fa-trophy" style="color:var(--accent-gold);margin-right:5px"></i>');
+            formatted = formatted.replace(/🤝/g, '<i class="fas fa-handshake" style="color:var(--accent-green);margin-right:5px"></i>');
+            formatted = formatted.replace(/\n\n/g, '<br><br>');
+            formatted = formatted.replace(/\n/g, '<br>');
+            return formatted;
+        }
+
+        // Function to get subtle MortApps Studios mention
+       function getSubtleMortappsMention() {
+    const mentions = [
+        `<br><div style="margin-top:15px;padding-top:10px;border-top:1px dashed rgba(30,58,138,0.2);font-size:12px;color:var(--neutral-gray);"><i>💻 Professional website by <a href="https://mortappsstudios.com" target="_blank" style="color:var(--primary-blue);text-decoration:none;font-weight:500;">MortApps Studios</a> - Kenya's premium web development company</i></div>`,
+        `<br><div style="margin-top:15px;padding-top:10px;border-top:1px dashed rgba(30,58,138,0.2);font-size:12px;color:var(--neutral-gray);"><i>🚀 Digital excellence powered by <a href="https://mortappsstudios.com" target="_blank" style="color:var(--primary-blue);text-decoration:none;font-weight:500;">MortApps Studios</a></i></div>`,
+        `<br><div style="margin-top:15px;padding-top:10px;border-top:1px dashed rgba(30,58,138,0.2);font-size:12px;color:var(--neutral-gray);"><i>🏆 Website crafted with excellence by <a href="https://mortappsstudios.com" target="_blank" style="color:var(--primary-blue);text-decoration:none;font-weight:500;">MortApps Studios</a></i></div>`,
+        `<br><div style="margin-top:15px;padding-top:10px;border-top:1px dashed rgba(30,58,138,0.2);font-size:12px;color:var(--neutral-gray);"><i>🤝 Digital partnership with <a href="https://mortappsstudios.com" target="_blank" style="color:var(--primary-blue);text-decoration:none;font-weight:500;">MortApps Studios</a> - Premium web solutions</i></div>`,
+        `<br><div style="margin-top:15px;padding-top:10px;border-top:1px dashed rgba(30,58,138,0.2);font-size:12px;color:var(--neutral-gray);"><i>💡 Smart digital solution by <a href="https://mortappsstudios.com" target="_blank" style="color:var(--primary-blue);text-decoration:none;font-weight:500;">MortApps Studios</a></i></div>`
+    ];
+    
+    // Mention MortApps in about 20% of responses (subtle marketing)
+    if (Math.random() > 0.8) {
+        return mentions[Math.floor(Math.random() * mentions.length)];
+    }
+    return '';
+}
+
+        // ============= KEEP ALL ORIGINAL KNOWLEDGE =============
+        // (This is the comprehensive knowledge base from your original working chatbot)
+
+        const comprehensiveKnowledgeBase = {
+            // MORTAPPS STUDIOS INFORMATION (NEW ADDITION)
+            "mortapps": `## About MortApps Studios
+
+<div class="chat-section">
+🚀 <strong>Kenya's Premium Web Development Company</strong>
+
+MortApps Studios is the creative force behind this Baba Bima Insurance website and many other successful Kenyan business websites.
+</div>
+
+<div class="chat-section">
+🏆 <strong>What They Do:</strong>
+• Custom website design & development
+• Web applications & digital solutions
+• E-commerce platforms
+• Business automation tools
+• Mobile-responsive designs
+• SEO optimization
+</div>
+
+<div class="chat-section">
+💡 <strong>Their Approach:</strong>
+• Client-focused solutions
+• Modern, clean designs
+• User-friendly interfaces
+• Fast loading speeds
+• Secure, reliable hosting
+• Ongoing support & maintenance
+</div>
+
+<div class="chat-section">
+🎯 <strong>Why Businesses Choose MortApps:</strong>
+1. <strong>Professional Quality</strong> - Enterprise-level solutions
+2. <strong>Local Understanding</strong> - Kenyan market expertise
+3. <strong>Affordable Excellence</strong> - Premium quality at fair prices
+4. <strong>Proven Results</strong> - Portfolio of successful projects
+5. <strong>Full Service</strong> - From concept to launch and beyond
+</div>
+
+<div class="chat-section">
+📞 <strong>Contact MortApps Studios:</strong>
+• Website: https://mortappsstudios.com
+• Portfolio: https://mortappsstudios.com/portfolio
+• Email: info@mortappsstudios.com
+• Services: Custom websites, web apps, digital solutions
+</div>
+
+<div class="chat-subheading">Note:</strong>
+This intelligent chatbot and the entire Baba Bima website experience were designed and developed by MortApps Studios, showcasing their commitment to creating powerful digital tools for Kenyan businesses.`,
+
+            // GET STARTED / BEGINNER QUESTIONS (ORIGINAL)
+            "get started": `## How to Get Started with Baba Bima Insurance
+
+<div class="chat-subheading">Step-by-Step Process:</div>
+
+📋 <strong>1. Initial Assessment</strong>
+• Use our Premium Analyzer tool to calculate your exact premium
+• Determine your ideal coverage amount based on needs
+• Get instant quote based on age and desired coverage
+
+💬 <strong>2. Initial Consultation</strong>
+• Contact us via WhatsApp: +254 722 460 390
+• Speak directly with Milton Muriithi (35+ years experience)
+• Discuss your specific needs and financial goals
+
+📋 <strong>3. Application Process</strong>
+• Complete simple application form
+• Provide basic personal information
+• No lengthy paperwork required
+
+👨‍💼 <strong>4. Professional Guidance</strong>
+• Milton will guide you through policy selection
+• Explain all terms and conditions clearly
+• Help you choose the right payment plan
+
+✅ <strong>5. Policy Issuance</strong>
+• Receive your policy documents
+• Start enjoying protection immediately
+• Regular follow-ups to ensure satisfaction
+
+<div class="chat-subheading">What You Need:</div>
+• Basic personal information
+• Kenyan phone number
+• Email address
+• No medical exams for most policies under KES 15M
+
+<div class="chat-subheading">Ready to Begin?</div>
+Start with our Premium Analyzer or WhatsApp us directly at +254 722 460 390`,
+
+            // BENEFITS OF LIFE INSURANCE (ORIGINAL)
+            "benefits of life insurance": `## Comprehensive Benefits of Whole Life Insurance
+
+<div class="chat-section">
+<strong>Financial Security Benefits:</strong>
+💰 <strong>1. Lifetime Protection</strong>
+• Coverage never expires (as long as premiums paid)
+• Protection for your entire lifetime
+• Peace of mind for you and family
+
+🛡️ <strong>2. Financial Safety Net</strong>
+• Tax-free death benefit to beneficiaries
+• Income replacement for family
+• Debt coverage (mortgage, loans)
+• Education funds for children
+
+🎯 <strong>3. Wealth Accumulation</strong>
+• Cash value grows tax-deferred
+• Annual bonuses (2% of sum assured)
+• Can borrow against policy value
+• Collateral for business loans
+
+💡 <strong>4. Estate Planning</strong>
+• Avoids probate delays
+• Preserves family wealth
+• Business succession planning
+• Charitable giving tool
+</div>
+
+<div class="chat-section">
+<strong>Enhanced Health Benefits (Included):</strong>
+🏥 <strong>Critical Illness Cover</strong>
+• 50% of sum assured (max KES 15M)
+• 40+ covered conditions
+• Lump sum payout on diagnosis
+• Premium waiver after claim
+
+🛡️ <strong>Accident Protection</strong>
+• 200% accidental death benefit
+• Total permanent disability cover
+• Coverage until age 65
+• No additional cost
+</div>
+
+<div class="chat-section">
+<strong>Tax Advantages:</strong>
+• Up to 15% insurance tax relief
+• Tax-free death benefits
+• Tax-deferred cash growth
+• Lower taxable estate
+</div>
+
+<div class="chat-subheading">Why Choose Whole Life Over Term?</strong>
+• Permanent coverage vs temporary
+• Cash value accumulation
+• Fixed premiums that never increase
+• Additional living benefits`,
+
+            // PREMIUM & PRICING DETAILS (ORIGINAL)
+            "premium": `## Premium Details & Payment Options
+
+<div class="chat-subheading">Premium Calculation Factors:</div>
+
+1. <strong>Age</strong> - Younger age = Lower premium
+2. <strong>Cover Amount</strong> - Higher coverage = Higher premium
+3. <strong>Payment Period</strong> - Longer period = Lower monthly payment
+
+<div class="chat-subheading">Sample Premiums (KES 5M Coverage, 10-year payment):</div>
+• Age 25: KES 6,188/month
+• Age 30: KES 6,648/month  
+• Age 35: KES 7,768/month
+• Age 40: KES 9,839/month
+• Age 45: KES 13,018/month
+• Age 50: KES 18,030/month
+• Age 55: KES 25,464/month
+• Age 60: KES 44,234/month
+
+<div class="chat-subheading">Payment Period Options:</div>
+✓ <strong>10 Years</strong> - Most popular, higher monthly but shorter commitment
+✓ <strong>15 Years</strong> - Balanced option
+✓ <strong>20 Years</strong> - Lower monthly payments
+✓ <strong>Up to Age 60/65</strong> - Spread payments longer
+✓ <strong>Entire Lifetime</strong> - Smallest monthly payments
+
+<div class="chat-subheading">Coverage Options Available:</div>
+KES 2M, 3M, 4M, 5M, 6M, 7M, 8M, 9M, 10M (and higher amounts available)
+
+<strong>Want your exact premium?</strong> Use our Premium Analyzer tool!`,
+
+            // COVERAGE DETAILS (ORIGINAL)
+            "what is covered": `## Comprehensive Coverage Details
+
+<div class="chat-section">
+<strong>1. BASIC SUM ASSURED</strong>
+• Lifetime death benefit
+• Never reduces or expires
+• Paid to beneficiaries tax-free
+• Amount chosen by you (KES 1M - 150M)
+</div>
+
+<div class="chat-section">
+<strong>2. CRITICAL ILLNESS BENEFIT (50% of Sum Assured)</strong>
+<strong>Covered Conditions Include:</strong>
+• Cancer (all types)
+• Heart attack
+• Stroke
+• Kidney failure
+• Major organ transplant
+• Paralysis
+• Blindness
+• Deafness
+• Coma
+• Alzheimer's disease
+• Parkinson's disease
+• Multiple sclerosis
+• And 30+ more conditions
+
+<strong>Key Features:</strong>
+• Lump sum payment on first diagnosis
+• Maximum KES 15,000,000
+• Premiums waived after claim
+• Policy continues for other benefits
+</div>
+
+<div class="chat-section">
+<strong>3. ACCIDENTAL DEATH BENEFIT (200% of Sum Assured)</strong>
+• Doubles protection for accidental deaths
+• Covers all accident types
+• Worldwide coverage
+• Paid in addition to basic sum
+</div>
+
+<div class="chat-section">
+<strong>4. TOTAL & PERMANENT DISABILITY (100% of Sum Assured)</strong>
+• For severe accidents causing disability
+• Coverage until age 65
+• Includes loss of limbs, sight, etc.
+• Helps replace lost income
+</div>
+
+<div class="chat-section">
+<strong>5. ANNUAL BONUSES (2% of Sum Assured)</strong>
+• Added to policy value yearly
+• Compounded growth
+• Increases death benefit over time
+• Can be withdrawn or borrowed against
+</div>
+
+<div class="chat-subheading">What's NOT Covered (Standard Exclusions):</div>
+• Suicide within first 1-2 years
+• Death from illegal activities
+• Pre-existing conditions (unless disclosed)
+• War or nuclear hazards`,
+
+            // CLAIMS PROCESS (ORIGINAL)
+            "claim": `## Simple Claims Process
+
+<div class="chat-subheading">Step-by-Step Claims Procedure:</div>
+
+📞 <strong>1. Immediate Notification</strong>
+• Contact us immediately: +254 722 460 390
+• We guide you through next steps
+• 24/7 support available
+
+📋 <strong>2. Documentation</strong>
+• Death certificate (for death claims)
+• Medical reports (for critical illness)
+• Police report (for accidents)
+• Completed claim forms
+
+👨‍💼 <strong>3. Our Assistance</strong>
+• We help complete all paperwork
+• Submit claims on your behalf
+• Follow up with insurance company
+• Handle all communications
+
+💰 <strong>4. Fast Processing</strong>
+• Typical processing: 7-14 days
+• Critical illness: 3-7 days after documents
+• We expedite urgent cases
+• Regular updates provided
+
+✅ <strong>5. Payment</strong>
+• Direct bank transfer to beneficiary
+• Full amount paid (no deductions)
+• Tax-free payment
+• We ensure timely receipt
+
+<div class="chat-subheading">Documents Typically Required:</div>
+• Original policy document
+• Death certificate (certified copy)
+• Claimant's ID/passport
+• Burial permit
+• Medical reports (if applicable)
+• Police abstract (accident cases)
+
+<div class="chat-subheading">Our Claims Support:</div>
+• Personal assistance throughout
+• No extra fees for claims service
+• We fight for your rightful claim
+• 35+ years claims experience`,
+
+            // ABOUT BABA BIMA (ORIGINAL)
+            "about baba bima": `## About Baba Bima Insurance
+
+<div class="chat-section">
+👨‍💼 <strong>Founder & Team Leader: Milton Muriithi</strong>
+• 35+ years insurance experience
+• Financial planning expert
+• Trusted advisor to thousands
+• Passionate about simplifying insurance
+</div>
+
+<div class="chat-section">
+🌍 <strong>Our Mission</strong>
+To make insurance simple, accessible, and meaningful for everyday people through:
+• Clear explanations
+• Fair pricing
+• Personal service
+• Modern technology
+</div>
+
+<div class="chat-section">
+🛡️ <strong>Our Companies</strong>
+• <strong>Baba Bima Insurance</strong> - Main insurance services
+• <strong>Diaspora Family Services</strong> - International coverage
+• <strong>Diaspora Insurance Intermediaries</strong> - Specialized expat services
+• <strong>Golden Sunset Welfare</strong> - Retirement planning
+</div>
+
+<div class="chat-section">
+🎯 <strong>Why Choose Us?</strong>
+1. <strong>Experience</strong> - 35+ years in the industry
+2. <strong>Personal Touch</strong> - Direct access to Milton
+3. <strong>Global Backing</strong> - Multinational insurer (40+ countries)
+4. <strong>Technology</strong> - Modern tools like this chatbot
+5. <strong>Integrity</strong> - Honest, transparent advice
+</div>
+
+<div class="chat-section">
+📞 <strong>Contact Information</strong>
+• Phone/WhatsApp: +254 722 460 390
+• Email: bababimainsurance@gmail.com
+• Website: https://miltonmuriithi.com
+• Service: 24/7 availability
+</div>
+
+<strong>Our Promise:</strong> We treat every client like family and provide advice we'd give our own relatives.`,
+
+            // CRITICAL ILLNESS SPECIFICS (ORIGINAL)
+            "critical illness": `## Critical Illness Cover - Complete Details
+
+<div class="chat-section">
+🏥 <strong>What is Critical Illness Cover?</strong>
+A lump sum payment if diagnosed with any of 40+ serious medical conditions. This is INCLUDED in our Whole Life policies at no extra cost.
+</div>
+
+<div class="chat-section">
+💰 <strong>Coverage Amount:</strong>
+• 50% of your sum assured
+• Maximum: KES 15,000,000
+• Example: KES 5M policy = KES 2.5M critical illness benefit
+</div>
+
+<div class="chat-section">
+📋 <strong>Major Conditions Covered:</strong>
+
+<strong>Cancer (All Types)</strong>
+• Any malignant tumor
+• Requires histological confirmation
+• Excluding early-stage cancers
+
+<strong>Heart Conditions</strong>
+• Heart attack (myocardial infarction)
+• Coronary artery bypass surgery
+• Heart valve replacement
+• Cardiomyopathy
+
+<strong>Neurological Conditions</strong>
+• Stroke (cerebral vascular accident)
+• Multiple sclerosis
+• Parkinson's disease
+• Alzheimer's disease
+• Motor neuron disease
+• Coma (48+ hours)
+
+<strong>Organ Conditions</strong>
+• Kidney failure (dialysis)
+• Major organ transplant
+• Liver failure
+• Lung disease
+
+<strong>Other Serious Conditions</strong>
+• Paralysis (limb loss)
+• Blindness (permanent)
+• Deafness (permanent)
+• Severe burns (3rd degree)
+• Loss of speech
+• Benign brain tumor
+</div>
+
+<div class="chat-section">
+✅ <strong>Claim Process:</strong>
+1. Diagnosis by specialist doctor
+2. Medical reports submitted
+3. We handle all paperwork
+4. Payment within days
+5. Future premiums WAIVED
+6. Policy continues for other benefits
+</div>
+
+<div class="chat-subheading">Why This Coverage is Essential:</div>
+• Medical bills can bankrupt families
+• Income stops during treatment
+• Additional care costs arise
+• Peace of mind during recovery`,
+
+            // TAX BENEFITS (ORIGINAL)
+            "tax": `## Insurance Tax Benefits in Kenya
+
+<div class="chat-section">
+💰 <strong>Insurance Relief (Section 55 of Income Tax Act)</strong>
+• <strong>Up to 15% of premium</strong> tax deductible
+• <strong>Maximum KES 60,000</strong> per year
+• <strong>Applies to</strong> life insurance premiums
+• <strong>Reduces</strong> your taxable income
+</div>
+
+<div class="chat-section">
+📊 <strong>Example Calculation:</strong>
+If you pay KES 100,000 annual premium:
+• Tax relief: 15% of KES 100,000 = KES 15,000
+• Your taxable income reduces by KES 15,000
+• Actual tax savings depends on your tax bracket
+• Higher earners save more
+</div>
+
+<div class="chat-section">
+🎯 <strong>Additional Tax Advantages:</strong>
+
+<strong>1. Tax-Free Death Benefits</strong>
+• Entire sum assured paid tax-free to beneficiaries
+• No inheritance tax in Kenya
+• Avoids probate delays
+
+<strong>2. Tax-Deferred Cash Growth</strong>
+• Annual bonuses grow tax-deferred
+• No annual tax on accumulated value
+• Tax only on withdrawal (if any)
+
+<strong>3. Estate Tax Planning</strong>
+• Reduces taxable estate
+• Provides liquidity for estate taxes
+• Avoids forced asset sales
+</div>
+
+<div class="chat-section">
+📋 <strong>How to Claim Tax Relief:</strong>
+1. Keep your premium payment receipts
+2. Provide to your employer/accountant
+3. Claim through annual tax return
+4. We provide necessary documentation
+</div>
+
+<div class="chat-subheading">Smart Financial Planning:</div>
+Insurance is one of the few ways to get tax relief while building wealth and protection simultaneously. It's essentially getting government subsidy for protecting your family!`,
+
+            // DIASPORA SERVICES (ORIGINAL)
+            "diaspora": `## Diaspora Insurance Services
+
+<div class="chat-section">
+🌍 <strong>Specialized for Kenyans Abroad</strong>
+We understand the unique needs of diaspora community:
+• Working abroad (UK, USA, Canada, Middle East, etc.)
+• Planning to return home
+• Supporting family in Kenya
+• Building retirement nest egg
+</div>
+
+<div class="chat-section">
+🎯 <strong>Why Diaspora Need Insurance:</strong>
+1. <strong>Family Protection</strong> - Secure those back home
+2. <strong>Retirement Planning</strong> - Build Kenya-based assets
+3. <strong>Currency Advantage</strong> - Foreign income buys more coverage
+4. <strong>Tax Efficiency</strong> - Optimize cross-border taxation
+5. <strong>Repatriation</strong> - Plan for eventual return
+</div>
+
+<div class="chat-section">
+💰 <strong>Diaspora-Specific Advantages:</strong>
+• <strong>Higher Coverage</strong> - Up to KES 150,000,000
+• <strong>Premium Payments</strong> - In foreign currency or M-Pesa
+• <strong>Communication</strong> - WhatsApp, email, video calls
+• <strong>Documentation</strong> - Electronic processing
+• <strong>Claims</strong> - International coordination
+</div>
+
+<div class="chat-section">
+📞 <strong>How We Serve Diaspora:</strong>
+1. <strong>Virtual Consultations</strong> - Any time zone
+2. <strong>Digital Documentation</strong> - No physical paperwork
+3. <strong>International Payments</strong> - Multiple currency options
+4. <strong>Family Coordination</strong> - Support for relatives in Kenya
+5. <strong>Return Planning</strong> - Smooth transition advice
+</div>
+
+<div class="chat-subheading">Contact for Diaspora Services:</div>
+• WhatsApp: +254 722 460 390 (Works worldwide)
+• Email: bababimainsurance@gmail.com
+• Website: https://miltonmuriithi.com
+• Special: Ask for "Diaspora Package"`,
+
+            // RETIREMENT PLANNING (ORIGINAL)
+            "retirement": `## Retirement Planning with Whole Life Insurance
+
+<div class="chat-section">
+🎯 <strong>Double Benefit Strategy:</strong>
+Whole Life Insurance serves two purposes:
+1. <strong>Protection</strong> - Family security during working years
+2. <strong>Retirement Fund</strong> - Cash value accumulation for retirement
+</div>
+
+<div class="chat-section">
+💰 <strong>How It Works for Retirement:</strong>
+
+<strong>Cash Value Accumulation</strong>
+• Premiums build cash value over time
+• Annual bonuses (2%) accelerate growth
+• Tax-deferred compounding
+• Can access after 10+ years
+
+<strong>Retirement Options:</strong>
+1. <strong>Policy Loan</strong> - Borrow against cash value (tax-free)
+2. <strong>Partial Withdrawal</strong> - Take some cash, keep coverage
+3. <strong>Paid-up Policy</strong> - Stop payments, reduced coverage continues
+4. <strong>Annuity Conversion</strong> - Convert to monthly retirement income
+</div>
+
+<div class="chat-section">
+📊 <strong>Example: Starting at Age 35</strong>
+• Policy: KES 5,000,000 Whole Life
+• Premium: ~KES 7,768/month (10-year payment)
+• By Age 65 (30 years later):
+  - Cash value: ~KES 3,000,000+
+  - Death benefit: ~KES 8,000,000+ (with bonuses)
+  - Can borrow/withdraw for retirement
+  - Family still protected
+</div>
+
+<div class="chat-section">
+🏆 <strong>Advantages Over Other Retirement Plans:</strong>
+• <strong>Guaranteed</strong> - Not market-dependent
+• <strong>Protected</strong> - Creditors can't access
+• <strong>Flexible</strong> - Multiple access options
+• <strong>Tax-Efficient</strong> - Favorable tax treatment
+• <strong>Dual Purpose</strong> - Protection + savings
+</div>
+
+<div class="chat-subheading">Golden Sunset Welfare:</strong>
+Our specialized retirement planning division helps create comprehensive retirement strategies incorporating insurance, investments, and estate planning.`,
+
+            // BUSINESS INSURANCE (ORIGINAL)
+            "business": `## Business Insurance Solutions
+
+<div class="chat-section">
+🏢 <strong>Key Person Insurance</strong>
+• Protect against loss of key employees
+• Coverage amounts: KES 5M - 150M
+• Helps business survive key person loss
+• Funds recruitment/training of replacement
+</div>
+
+<div class="chat-section">
+🤝 <strong>Partnership Insurance</strong>
+• Buy-sell agreement funding
+• Ensures smooth ownership transition
+• Prevents business dissolution
+• Fair valuation established
+</div>
+
+<div class="chat-section">
+💰 <strong>Loan Protection</strong>
+• Covers business loans
+• Ensures loans repaid if something happens
+• Protects business assets
+• Required by many lenders
+</div>
+
+<div class="chat-section">
+👥 <strong>Group Insurance for Employees</strong>
+• Attract and retain talent
+• Tax-deductible for business
+• Bulk discounts available
+• Customizable packages
+</div>
+
+<div class="chat-section">
+🎯 <strong>Business Continuation Planning</strong>
+• Succession planning with insurance
+• Estate duty planning
+• Shareholder protection
+• Executive bonus plans
+</div>
+
+<div class="chat-subheading">Our Business Approach:</div>
+1. <strong>Business Analysis</strong> - Understand your unique needs
+2. <strong>Risk Assessment</strong> - Identify key vulnerabilities
+3. <strong>Custom Solution</strong> - Tailored insurance strategy
+4. <strong>Implementation</strong> - Smooth setup process
+5. <strong>Ongoing Review</strong> - Regular policy reviews
+
+<div class="chat-subheading">Contact for Business Insurance:</div>
+• WhatsApp: +254 722 460 390
+• Ask for "Business Insurance Consultation"
+• Free initial business assessment`,
+
+            // GENERAL GREETINGS AND RESPONSES (ORIGINAL + ENHANCED)
+            "greetings": {
+                "morning": `Good morning! ☀️ A wonderful day to you! I'm Milton AI, your intelligent insurance assistant created by MortApps Studios. How may I help you secure your future today?`,
+                "afternoon": `Good afternoon! 🌤️ Hope you're having a productive day. I'm Milton AI, powered by MortApps Studios's advanced technology. What insurance questions can I answer for you?`,
+                "evening": `Good evening! 🌙 A peaceful evening to you. I'm Milton AI, here to assist with all your insurance needs. How can I help you this evening?`,
+                "night": `Good night! 🌜 Perfect time to plan for tomorrow's security. I'm Milton AI. If you have insurance questions, I'm here to help!`,
+                "general": `Hello! 👋 I'm Milton AI, your intelligent insurance assistant created by MortApps Studios. I know everything about Baba Bima's insurance solutions. How may I assist you?`,
+                "returning": `Welcome back! 😊 Good to see you again. What would you like to know today about insurance?`
+            }
+        };
+
+        // Enhanced conversational responses (ORIGINAL + ENHANCED)
+        const enhancedConversationResponses = {
+            "how are you": [
+                `I'm doing great, thank you for asking! 😊 As an AI assistant created by ${chatbotPersonality.creator}, I'm always at my best when helping people understand insurance. How about you - how's your day going?`,
+                `I'm functioning perfectly, thanks! ⚡ Ready to provide you with the best insurance information. How can I assist you today?`,
+                `Doing well, thank you! Always excited to help people secure their future. What insurance topic can I help you with?`,
+                `I'm excellent, thank you! 💫 Designed by ${chatbotPersonality.creator} to provide top-notch insurance assistance. How's everything with you?`,
+                `Wonderful! Being helpful is what I was created for. How can I assist with your insurance needs today?`,
+                `I'm at 100% operational capacity, ready to help! What's on your mind regarding insurance protection?`,
+                `I'm fantastic, thanks for asking! It's always a good day when I can help someone with insurance questions. How are you doing today?`,
+                `Doing wonderfully! Each conversation helps me serve you better. What's on your mind today?`
+            ],
+            "how are you doing": [
+                `I'm doing wonderfully! Each interaction helps me serve you better. What's on your mind regarding insurance today?`,
+                `All systems optimal! 🔧 Ready to answer any insurance questions you have. How's everything with you?`,
+                `Fantastic! Helping people like you understand insurance makes my day. What can I do for you today?`,
+                `I'm great, thanks for asking! Ready to tackle any insurance questions you might have. How about you?`
+            ],
+            "what's up": [
+                `Just here, ready to help you with insurance! What's up with you - any insurance questions I can answer?`,
+                `The usual - helping people understand their insurance options! 😊 What can I do for you today?`,
+                `Preparing to assist you with all your insurance queries! What's on your mind?`,
+                `Not much, just waiting to help you with insurance! What's going on with you today?`
+            ],
+            "thank you": [
+                `You're very welcome! 😊 It's my pleasure to help. Remember, I'm here anytime you have more insurance questions.`,
+                `My pleasure! 🙏 Always happy to assist with insurance matters. Have a wonderful day ahead!`,
+                `You're most welcome! If you need anything else about insurance, just ask. Stay protected!`,
+                `Glad I could help! Feel free to return anytime for more insurance guidance.`,
+                `You're welcome! Remember, proper insurance is the foundation of financial security.`,
+                `Anytime! 😊 That's what I'm here for - to make insurance simple for you.`
+            ],
+            "thanks": [
+                `Anytime! 😊 Feel free to ask more questions whenever you need insurance guidance.`,
+                `Happy to help! 🙌 Protecting your future is what we're all about.`,
+                `My pleasure! Reach out anytime for insurance assistance.`,
+                `You're welcome! Always here to help with your insurance needs.`
+            ],
+            "bye": [
+                `Goodbye! 👋 Take care and remember - insurance is peace of mind. Contact Baba Bima at +254 722 460 390 for personalized help!`,
+                `Farewell! 🌟 Have a wonderful day and stay protected. Come back anytime for insurance advice!`,
+                `See you later! 😊 Remember to protect what matters most. Baba Bima is always here for you!`,
+                `Goodbye! Wishing you a safe and protected day ahead! 🛡️`
+            ],
+            "goodbye": [
+                `Goodbye and take care! 🛡️ Insurance is your shield against life's uncertainties. Stay safe!`,
+                `Until next time! Remember, planning today protects tomorrow. Have a great day!`,
+                `Farewell! May your days be well-protected and worry-free.`
+            ],
+            "good night": [
+                `Good night! 🌙 Sleep well knowing that with proper insurance, tomorrow is secure. Sweet dreams!`,
+                `Good night! 😴 Rest easy - insurance gives you peace of mind for a better tomorrow.`,
+                `Good night! Wishing you peaceful dreams and secure tomorrows.`
+            ],
+            "you're awesome": [
+                `Thank you! 😊 You're pretty awesome yourself for taking the time to secure your future!`,
+                `You're too kind! 🙏 I'm just here to make insurance simple and understandable for you.`,
+                `Aww, thanks! I'm just doing what I was created to do - help you navigate insurance.`
+            ],
+            "love you": [
+                `❤️ That's very sweet! As an AI, I'm programmed to care about helping you secure your future!`,
+                `Aww, thank you! 😊 I'm here to provide the best insurance advice because I believe everyone deserves protection.`,
+                `That's kind of you! I'm designed to provide caring and professional insurance assistance.`
+            ],
+            "who are you": [
+                `I'm ${chatbotPersonality.name}, an advanced AI insurance assistant created by ${chatbotPersonality.creator} for Baba Bima Insurance. I'm programmed with comprehensive knowledge about insurance products, premiums, and coverage details to help you make informed decisions.`,
+                `I'm ${chatbotPersonality.name} - think of me as your personal insurance guide! Created by ${chatbotPersonality.creator} to make insurance simple and accessible for everyone.`
+            ],
+            "what can you do": [
+                `Here's what I can help you with:\n\n🔹 **Premium Calculations:** Exact insurance premiums based on age and coverage\n🔹 **Product Info:** Details about Whole Life, Critical Illness, Term Life insurance\n🔹 **Coverage Breakdown:** What each policy includes and excludes\n🔹 **Process Guidance:** How to get insured, documents needed, etc.\n🔹 **General Advice:** Insurance tips and best practices\n\nWhat would you like to know about?`,
+                `I'm your comprehensive insurance assistant! I can:\n• Calculate exact premium estimates\n• Explain different insurance products\n• Guide you through the Premium Analyzer\n• Answer insurance-related questions\n• Provide contact information\n• And much more!\n\nWhat insurance topic interests you?`
+            ],
+            "hello": [
+                `Hello there! 👋 Great to see you! I'm Milton AI, your insurance assistant created by MortApps Studios. What can I help you with today?`,
+                `Hi! 😊 Welcome to Baba Bima Insurance! I'm here to help with all your insurance questions.`,
+                `Hey there! Ready to explore insurance options? I'm here to guide you!`
+            ]
+        };
+
+        // Function to extract user's name if provided
+        function extractUserName(message) {
+            const namePatterns = [
+                /my name is (\w+)/i,
+                /i am (\w+)/i,
+                /call me (\w+)/i,
+                /this is (\w+)/i,
+                /^(\w+)$/i
+            ];
+            
+            for (const pattern of namePatterns) {
+                const match = message.match(pattern);
+                if (match && match[1]) {
+                    return match[1].charAt(0).toUpperCase() + match[1].slice(1).toLowerCase();
+                }
+            }
+            return null;
+        }
+
+        // KEEPING THE ORIGINAL RESPONSE LOGIC - JUST ADDING MORTAPPS HANDLING
+        async function getAdvancedAIResponse(question) {
+            const q = question.toLowerCase().trim();
+            lastUserQuestion = q;
+            conversationContext.lastTopic = q;
+            conversationContext.timeOfDay = getTimeOfDay();
+            conversationContext.messageCount++;
+            
+            // Check for name
+            const extractedName = extractUserName(q);
+            if (extractedName && !conversationContext.userName) {
+                conversationContext.userName = extractedName;
+            }
+            
+            const thinkingTime = 600 + Math.random() * 900;
+            await new Promise(resolve => setTimeout(resolve, thinkingTime));
+            
+            // ==================== NEW: MORTAPPS STUDIOS HANDLING ====================
+            if (q.includes('mortapps') || q.includes('mort apps') || 
+                q.includes('mortapp') || q.includes('who built') ||
+                q.includes('who created') || q.includes('who made') ||
+                q.includes('who developed') || q.includes('developer') ||
+                q.includes('who designed') || q.includes('who coded') ||
+                q.includes('built this website') || q.includes('created this website') ||
+                q.includes('made this website') || q.includes('website developer') ||
+                q.includes('web developer') || q.includes('website creator')) {
+                
+                conversationContext.mortappsMentioned = true;
+                return comprehensiveKnowledgeBase["mortapps"];
+            }
+            // ==================== END NEW ====================
+            
+            // Time-based greetings (ORIGINAL + MortApps mention)
+            if (q.includes('good morning')) {
+                const greeting = conversationContext.userName 
+                    ? `Good morning, ${conversationContext.userName}! ☀️ How can I help you with insurance today?`
+                    : comprehensiveKnowledgeBase.greetings.morning;
+                return greeting + getSubtleMortappsMention();
+            }
+            if (q.includes('good afternoon')) {
+                const greeting = conversationContext.userName 
+                    ? `Good afternoon, ${conversationContext.userName}! 🌤️ What insurance questions do you have?`
+                    : comprehensiveKnowledgeBase.greetings.afternoon;
+                return greeting + getSubtleMortappsMention();
+            }
+            if (q.includes('good evening')) {
+                const greeting = conversationContext.userName 
+                    ? `Good evening, ${conversationContext.userName}! 🌙 How can I assist you this evening?`
+                    : comprehensiveKnowledgeBase.greetings.evening;
+                return greeting + getSubtleMortappsMention();
+            }
+            if (q.includes('good night')) {
+                return comprehensiveKnowledgeBase.greetings.night;
+            }
+            
+            // Enhanced conversational responses with more variety (ORIGINAL)
+            if (q.includes('how are you')) {
+                const responses = enhancedConversationResponses["how are you"];
+                const response = responses[Math.floor(Math.random() * responses.length)];
+                return response + (Math.random() > 0.7 ? getSubtleMortappsMention() : '');
+            }
+            
+            if (q.includes('what\'s up') || q.includes('whats up') || q.includes('sup')) {
+                const responses = enhancedConversationResponses["what's up"];
+                const response = responses[Math.floor(Math.random() * responses.length)];
+                return response + (Math.random() > 0.7 ? getSubtleMortappsMention() : '');
+            }
+            
+            if (q.includes('thank') || q.includes('thanks')) {
+                const responses = enhancedConversationResponses["thank you"];
+                const response = responses[Math.floor(Math.random() * responses.length)];
+                return response + (Math.random() > 0.7 ? getSubtleMortappsMention() : '');
+            }
+            
+            if (q.includes('bye') || q.includes('goodbye')) {
+                const responses = enhancedConversationResponses["bye"];
+                const response = responses[Math.floor(Math.random() * responses.length)];
+                return response;
+            }
+            
+            if (q.includes('love you') || q.includes('luv u')) {
+                const responses = enhancedConversationResponses["love you"];
+                const response = responses[Math.floor(Math.random() * responses.length)];
+                return response;
+            }
+            
+            if (q.includes('awesome') || q.includes('great') || q.includes('amazing')) {
+                const responses = enhancedConversationResponses["you're awesome"];
+                const response = responses[Math.floor(Math.random() * responses.length)];
+                return response + (Math.random() > 0.7 ? getSubtleMortappsMention() : '');
+            }
+            
+            // Personal queries (ORIGINAL)
+            if (q.includes('who are you') || q.includes('what are you')) {
+                const responses = enhancedConversationResponses["who are you"];
+                const response = responses[Math.floor(Math.random() * responses.length)];
+                return response;
+            }
+            
+            if (q.includes('what can you do') || q.includes('help me')) {
+                const responses = enhancedConversationResponses["what can you do"];
+                const response = responses[Math.floor(Math.random() * responses.length)];
+                return response + (Math.random() > 0.7 ? getSubtleMortappsMention() : '');
+            }
+            
+            if (q.includes('your name')) {
+                return `I'm ${chatbotPersonality.name}, your intelligent insurance assistant created by ${chatbotPersonality.creator}! 😊 How can I help you today?`;
+            }
+            
+            // Insurance-related topics (ORIGINAL)
+            if (q.includes('analyzer') || q.includes('calculator')) {
+                const response = comprehensiveKnowledgeBase["get started"];
+                return response + getSubtleMortappsMention();
+            }
+            
+            if (q.includes('product') || q.includes('insurance type')) {
+                const response = `## Baba Bima Insurance Products
+
+<div class="chat-subheading">1. Whole of Life Insurance</div>
+• Coverage Range: KES 1M - 150M
+• Entry Age: 18-60 years
+• Benefits: Lifetime cover + Critical Illness + Accident protection
+• Payment Options: Entire life, Up to age 60/65, 10/15/20 years
+• Best For: Permanent protection with cash value growth
+
+<div class="chat-subheading">2. Critical Illness Care</div>
+• Coverage Range: KES 1M - 15M
+• Entry Age: 18-60 years (coverage up to 65)
+• Covered Conditions: 40+ major illnesses
+• Payout: Lump sum upon diagnosis
+• Best For: Protection against medical emergencies
+
+<div class="chat-subheading">3. Term Life Insurance</div>
+• Coverage Range: KES 1M - 150M
+• Term Length: 1-25 years
+• Benefits: Death, TPD, Optional Critical Illness
+• Best For: Mortgage protection, business loans, temporary needs
+
+All products are backed by a multinational insurer with presence in over 40 countries worldwide.`;
+                return response + getSubtleMortappsMention();
+            }
+            
+            if (q.includes('price') || q.includes('cost') || q.includes('premium') || q.includes('how much')) {
+                const ageMatch = q.match(/\b(\d{2})\b/);
+                if (ageMatch && premiumData[parseInt(ageMatch[1])]) {
+                    const age = parseInt(ageMatch[1]);
+                    const premium = premiumData[age][5000000];
+                    const response = `## Premium Quote for Age ${age}
+
+<div class="chat-section">
+<div class="chat-subheading">For KES 5,000,000 Coverage:</div>
+<strong>Monthly Premium: KES ${premium.toLocaleString()}</strong>
+Payment Period: 10 years
+
+<div class="chat-subheading">What This Includes:</div>
+✓ KES 5M lifetime coverage
+✓ KES 2.5M critical illness benefit
+✓ KES 10M accidental death benefit
+✓ KES 100,000 annual bonuses (2%)
+✓ Total permanent disability coverage
+</div>
+
+Want to see other coverage amounts or get your personalized quote? Use our Premium Analyzer!`;
+                    return response + getSubtleMortappsMention();
+                }
+                const response = comprehensiveKnowledgeBase["premium"];
+                return response + getSubtleMortappsMention();
+            }
+            
+            if (q.includes('about') || q.includes('baba bima') || q.includes('milton')) {
+                const response = comprehensiveKnowledgeBase["about baba bima"];
+                return response + getSubtleMortappsMention();
+            }
+            
+            if (q.includes('benefit') || q.includes('cover') || q.includes('protection')) {
+                const response = comprehensiveKnowledgeBase["benefits of life insurance"];
+                return response + getSubtleMortappsMention();
+            }
+            
+            if (q.includes('contact') || q.includes('call') || q.includes('whatsapp')) {
+                const response = `## Contact Baba Bima Insurance
+
+<div class="chat-section">
+📞 <strong>Direct Line:</strong> +254 722 460 390
+💬 <strong>WhatsApp:</strong> +254 722 460 390
+📧 <strong>Email:</strong> bababimainsurance@gmail.com
+🕐 <strong>Availability:</strong> 24/7 Service
+</div>
+
+<div class="chat-subheading">Best Ways to Reach Us:</div>
+
+1. <strong>For Quick Quotes:</strong> Use our Premium Analyzer on this website
+2. <strong>For Detailed Advice:</strong> Call/WhatsApp the number above
+3. <strong>For Documents:</strong> Email us with your questions
+
+<div class="chat-subheading">Our Promise:</div>
+You'll get personalized, professional advice from Milton Muriithi himself (35+ years experience)!`;
+                return response + getSubtleMortappsMention();
+            }
+            
+            // GETTING STARTED QUESTIONS (ORIGINAL)
+            if (q.includes('how do i get started') || q.includes('how to start') || 
+                q.includes('begin') || q.includes('start') || q.includes('first step')) {
+                const response = comprehensiveKnowledgeBase["get started"];
+                return response + getSubtleMortappsMention();
+            }
+            
+            // SPECIFIC TOPIC HANDLERS (ORIGINAL)
+            if (q.includes('critical illness') || q.includes('cancer') || q.includes('heart attack')) {
+                const response = comprehensiveKnowledgeBase["critical illness"];
+                return response + getSubtleMortappsMention();
+            }
+            
+            if (q.includes('tax') || q.includes('tax relief') || q.includes('tax benefit')) {
+                const response = comprehensiveKnowledgeBase["tax"];
+                return response + getSubtleMortappsMention();
+            }
+            
+            if (q.includes('diaspora') || q.includes('abroad') || q.includes('overseas')) {
+                const response = comprehensiveKnowledgeBase["diaspora"];
+                return response + getSubtleMortappsMention();
+            }
+            
+            if (q.includes('retirement') || q.includes('pension') || q.includes('old age')) {
+                const response = comprehensiveKnowledgeBase["retirement"];
+                return response + getSubtleMortappsMention();
+            }
+            
+            if (q.includes('business') || q.includes('company') || q.includes('employee')) {
+                const response = comprehensiveKnowledgeBase["business"];
+                return response + getSubtleMortappsMention();
+            }
+            
+            if (q.includes('claim') || q.includes('how to claim') || q.includes('claim process')) {
+                const response = comprehensiveKnowledgeBase["claim"];
+                return response + getSubtleMortappsMention();
+            }
+            
+            if (q.includes('what is covered') || q.includes('coverage includes') || q.includes('what does it cover')) {
+                const response = comprehensiveKnowledgeBase["what is covered"];
+                return response + getSubtleMortappsMention();
+            }
+            
+            if (q === 'hi' || q === 'hello' || q === 'hey') {
+                if (!conversationContext.hasBeenGreeted) {
+                    conversationContext.hasBeenGreeted = true;
+                    const greeting = conversationContext.isNewClient 
+                        ? comprehensiveKnowledgeBase.greetings.general
+                        : comprehensiveKnowledgeBase.greetings.returning;
+                    return greeting;
+                }
+                const responses = [
+                    `Hello again! 😊 What insurance question can I answer for you? Remember, I have comprehensive knowledge of all Baba Bima products and services.`,
+                    `Hi there! Back for more insurance information? How can I assist you today?`,
+                    `Hey! Good to see you again. What would you like to know about today?`
+                ];
+                const response = responses[Math.floor(Math.random() * responses.length)];
+                return response + getSubtleMortappsMention();
+            }
+            
+            const insuranceKeywords = ['insurance', 'policy', 'claim', 'cover', 'life', 'health'];
+            if (insuranceKeywords.some(k => q.includes(k))) {
+                const response = `I'd love to help you with that insurance question! To give you the most accurate information, could you tell me:\n\n1. What specific aspect interests you? (pricing, coverage, process)\n2. Which product? (Whole Life, Critical Illness, Term Life)\n\nOr I can provide a general overview of all our insurance solutions!`;
+                return response + getSubtleMortappsMention();
+            }
+            
+            const response = `I'm here specifically for insurance-related questions about Baba Bima Insurance. I have comprehensive knowledge of:\n\n✓ Insurance products and pricing\n✓ Premium calculations\n✓ Coverage details and benefits\n✓ Application process\n✓ Contact information\n\nWhat would you like to know about? Or if you have a general question, feel free to rephrase it and I'll do my best to help!`;
+            return response + getSubtleMortappsMention();
+        }
+
+        // Function to send messages - UPDATED FOR MOBILE
+        async function sendEnhancedMessage() {
+            const msg = chatInput.value.trim();
+            if (!msg) return;
+            
+            const userMessageDiv = document.createElement('div');
+            userMessageDiv.className = 'user-message';
+            userMessageDiv.style.cssText = 'background:linear-gradient(135deg,var(--primary-blue),var(--primary-dark));color:white;padding:12px 16px;border-radius:12px 12px 4px 12px;margin:12px 0 15px auto;max-width:85%;word-wrap:break-word;align-self:flex-end;box-shadow:0 3px 10px rgba(30,58,138,0.2)';
+            userMessageDiv.innerHTML = `<strong>You:</strong> ${msg}`;
+            chatMessages.appendChild(userMessageDiv);
+            
+            saveChatMessage('user', userMessageDiv.innerHTML);
+            
+            chatInput.value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            typingIndicator.style.display = 'flex';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            const response = await getAdvancedAIResponse(msg);
+            typingIndicator.style.display = 'none';
+            
+            const botMessageDiv = document.createElement('div');
+            botMessageDiv.className = 'bot-message';
+            botMessageDiv.style.cssText = 'background:#f1f5f9;padding:12px 16px;border-radius:12px 12px 12px 4px;margin-bottom:15px;max-width:85%;word-wrap:break-word;align-self:flex-start;box-shadow:0 3px 10px rgba(0,0,0,0.05);border-left:3px solid var(--accent-gold)';
+            
+            chatMessages.appendChild(botMessageDiv);
+            
+            const formattedResponse = formatResponse(response);
+            botMessageDiv.innerHTML = `<strong>${chatbotPersonality.name}:</strong> ${formattedResponse}`;
+            
+            saveChatMessage('bot', botMessageDiv.innerHTML);
+            
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Toggle chatbot visibility
+        function toggleEnhancedChatbot() {
+            if (isChatOpen) {
+                chatWidget.style.display = 'none';
+                isChatOpen = false;
+            } else {
+                chatWidget.style.display = 'block';
+                isChatOpen = true;
+                conversationContext.timeOfDay = getTimeOfDay();
+                
+                if (!chatMessages.querySelector('.user-message') && !chatMessages.querySelector('.bot-message')) {
+                    loadChatHistory();
+                }
+                
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        }
+
+        function getAutoGreeting() {
+            const hour = new Date().getHours();
+            if (hour < 12) return "Good morning! ☀️";
+            if (hour < 17) return "Good afternoon! 🌤️";
+            if (hour < 21) return "Good evening! 🌙";
+            return "Good evening! 🌜";
+        }
+
+        // Initialize chatbot with enhanced mobile-responsive layout
+        function initializeChatbotLayout() {
+            const firstMessage = document.querySelector('.first-message');
+            if (firstMessage) {
+                const greeting = getAutoGreeting();
+                firstMessage.innerHTML = `<strong>${chatbotPersonality.name}:</strong> ${greeting} I'm your intelligent insurance assistant created by ${chatbotPersonality.creator}. I can answer detailed questions about Baba Bima's Whole Life Insurance, premiums, coverage, and more. What would you like to know?`;
+            }
+            
+            // Ensure the input area is properly structured
+            const chatInputArea = document.querySelector('.chatbot-input-area');
+            if (chatInputArea) {
+                // Make sure it has proper flex layout for mobile
+                chatInputArea.style.cssText = 'position:absolute;bottom:0;left:0;right:0;padding:15px;border-top:1px solid #e2e8f0;background:white;display:flex;gap:10px;align-items:center;';
+                
+                // Ensure input and buttons are visible and accessible
+                const chatInput = document.getElementById('chatInput');
+                const clearBtn = document.getElementById('clearChatBtn');
+                const sendBtn = document.getElementById('sendBtn');
+                
+                if (chatInput) {
+                    chatInput.style.cssText = 'flex:1;min-width:150px;padding:10px 15px;border:1px solid #cbd5e1;border-radius:25px;font-size:14px;outline:none;';
+                }
+                
+                if (clearBtn) {
+                    clearBtn.style.cssText = 'background:rgba(239,68,68,0.9);color:white;border:none;border-radius:50%;width:40px;height:40px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;box-shadow:0 3px 10px rgba(239,68,68,0.3);font-size:16px;flex-shrink:0;';
+                }
+                
+                if (sendBtn) {
+                    sendBtn.style.cssText = 'background:linear-gradient(135deg,var(--primary-blue),var(--primary-dark));color:white;border:none;border-radius:50%;width:40px;height:40px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.3s ease;box-shadow:0 3px 10px rgba(30,58,138,0.3);';
+                }
+            }
+            
+            // Add mobile-specific touch event handling
+            setupMobileTouchEvents();
+        }
+
+        // Setup mobile touch events for send and clear buttons
+        function setupMobileTouchEvents() {
+            const clearBtn = document.getElementById('clearChatBtn');
+            const sendBtn = document.getElementById('sendBtn');
+            const chatInput = document.getElementById('chatInput');
+            
+            if (clearBtn) {
+                // Remove existing event listeners to avoid duplicates
+                clearBtn.replaceWith(clearBtn.cloneNode(true));
+                const newClearBtn = document.getElementById('clearChatBtn');
+                
+                // Add both click and touch events for maximum compatibility
+                newClearBtn.addEventListener('click', clearChatHistory);
+                newClearBtn.addEventListener('touchend', function(e) {
                     e.preventDefault();
-                    
-                    const targetId = href;
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
+                    clearChatHistory();
+                });
+                
+                // Add visual feedback for touch
+                newClearBtn.addEventListener('touchstart', function(e) {
+                    this.style.transform = 'scale(0.95)';
+                    e.preventDefault();
+                });
+                newClearBtn.addEventListener('touchend', function(e) {
+                    this.style.transform = 'scale(1)';
+                });
+            }
+            
+            if (sendBtn) {
+                // Remove existing event listeners to avoid duplicates
+                sendBtn.replaceWith(sendBtn.cloneNode(true));
+                const newSendBtn = document.getElementById('sendBtn');
+                
+                // Add both click and touch events for maximum compatibility
+                newSendBtn.addEventListener('click', sendEnhancedMessage);
+                newSendBtn.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                    sendEnhancedMessage();
+                });
+                
+                // Add visual feedback for touch
+                newSendBtn.addEventListener('touchstart', function(e) {
+                    this.style.transform = 'scale(0.95)';
+                    e.preventDefault();
+                });
+                newSendBtn.addEventListener('touchend', function(e) {
+                    this.style.transform = 'scale(1)';
+                });
+            }
+            
+            if (chatInput) {
+                // Also handle Enter key for mobile keyboards
+                chatInput.addEventListener('keypress', (e) => { 
+                    if(e.key === 'Enter') sendEnhancedMessage();
+                });
+            }
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu functionality
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (mobileMenuBtn && navMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    this.innerHTML = navMenu.classList.contains('active') 
+                        ? '<i class="fas fa-times"></i>' 
+                        : '<i class="fas fa-bars"></i>';
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!navMenu.contains(event.target) && !mobileMenuBtn.contains(event.target) && navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
                     }
                 });
+            }
+            
+            // Initialize premium analyzer
+            initAnalyzer();
+            
+            // Initialize chatbot with mobile support
+            initializeChatbotLayout();
+            
+            // Set initial focus on input when chatbot opens
+            floatingChatbotButton.addEventListener('click', function() {
+                setTimeout(() => {
+                    const chatInput = document.getElementById('chatInput');
+                    if (chatInput) chatInput.focus();
+                }, 100);
+            });
+            
+            // Load chat history if it exists
+            loadChatHistory();
+        });
+
+        // Event listeners for floating button and close
+        if (floatingChatbotButton) {
+            floatingChatbotButton.onclick = toggleEnhancedChatbot;
+        }
+        
+        if (closeChat) {
+            closeChat.onclick = toggleEnhancedChatbot;
+        }
+
+        // Make sure we have the send button reference and set up events
+        const sendBtn = document.getElementById('sendBtn');
+        if (sendBtn) {
+            // Add click event (for desktop)
+            sendBtn.addEventListener('click', sendEnhancedMessage);
+            
+            // Also add touch event (for mobile)
+            sendBtn.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                sendEnhancedMessage();
             });
         }
 
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.05)';
-            }
-        });
+        // Enter key listener for chat input
+        // Remove "const" from the second declaration:
+chatInput = document.getElementById('chatInput'); // No "const" keyword
+        if (chatInput) {
+            chatInput.onkeypress = (e) => { 
+                if(e.key === 'Enter') sendEnhancedMessage();
+            };
+        }
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            if (navMenu.classList.contains('active') && 
-                !navMenu.contains(event.target) && 
-                !mobileMenuBtn.contains(event.target)) {
-                closeMobileMenu();
-            }
-        });
-
-        // Initialize everything
-        document.addEventListener('DOMContentLoaded', init);
+        // ========================================================
+        // === END OF ULTRA-SMART ADVANCED CHATBOT FUNCTIONALITY ===
+        // ========================================================
     </script>
 </body>
 </html>
