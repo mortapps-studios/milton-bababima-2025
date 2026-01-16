@@ -385,6 +385,90 @@
             transform: translateY(-3px);
         }
 
+        /* ===== VIDEO SECTION ===== */
+        .video-section {
+            padding: 40px 0;
+            background: white;
+        }
+
+        .video-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            background: var(--neutral-dark);
+        }
+
+        .video-player {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-height: 600px;
+            object-fit: contain;
+            background: #000;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            border-radius: var(--border-radius);
+        }
+
+        .video-placeholder i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+        }
+
+        .video-placeholder p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .video-loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1.5rem;
+            display: none;
+        }
+
+        .video-fallback {
+            display: none;
+            text-align: center;
+            padding: 30px;
+            background: rgba(30, 58, 138, 0.1);
+            border-radius: var(--border-radius);
+            margin-top: 20px;
+        }
+
+        .video-fallback a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .video-fallback a:hover {
+            text-decoration: underline;
+        }
+
         /* ===== PREMIUM ANALYZER SECTION ===== */
         .premium-analyzer {
             background-color: white;
@@ -1275,6 +1359,49 @@
             display: none;
         }
 
+        /* Social Media Links Styles */
+        .social-media-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+            border-color: var(--accent-gold);
+        }
+
+        .social-link.facebook:hover {
+            background: linear-gradient(135deg, #1877F2, #0D5CB6);
+            color: white;
+        }
+
+        .social-link.instagram:hover {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            color: white;
+        }
+
+        .social-link.tiktok:hover {
+            background: linear-gradient(135deg, #000000, #25F4EE, #FE2C55);
+            color: white;
+        }
+
         .footer-bottom {
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -1868,6 +1995,24 @@
                         <i class="fas fa-calculator"></i> Calculate Your Premium
                     </a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- === VIDEO SECTION (NEW) === -->
+    <section class="video-section">
+        <div class="video-container">
+            <div class="video-wrapper">
+                <video class="video-player" controls playsinline preload="metadata" poster="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2MDAiIHZpZXdCb3g9IjAgMCAxMjAwIDYwMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjMUUzQThBIi8+CjxwYXRoIGQ9Ik0zMDAgMjUwTDUwMCAzNTBMNzAwIDI1MCIgc3Ryb2tlPSIjRDRBRjM3IiBzdHJva2Utd2lkdGg9IjEwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+">
+                    <source src="/vidz/bbmi-vid1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-loading" id="videoLoading">
+                    <i class="fas fa-spinner fa-spin"></i> Loading video...
+                </div>
+            </div>
+            <div class="video-fallback" id="videoFallback">
+                <p>If the video doesn't load, you can <a href="/vidz/bbmi-vid1.mp4" download>download it here</a> or contact us for assistance.</p>
             </div>
         </div>
     </section>
@@ -2504,6 +2649,18 @@
                     <div class="footer-about">
                         <p>Providing trusted Whole of Life Insurance solutions for individuals and families across Kenya. With over 35 years of experience, we make insurance simple, accessible, and meaningful.</p>
                     </div>
+                    <!-- Social Media Links -->
+                    <div class="social-media-links">
+                        <a href="https://web.facebook.com/profile.php?id=61586087081659" target="_blank" class="social-link facebook" aria-label="Visit our Facebook page">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/bababima.ke?igsh=emFsdDVzOTh6eHl0" target="_blank" class="social-link instagram" aria-label="Visit our Instagram page">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@bababimakenya" target="_blank" class="social-link tiktok" aria-label="Visit our TikTok page">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
                 </div>
                 
                 <div class="footer-column">
@@ -2600,6 +2757,44 @@
         // ========================================================
         // === COMPLETE WEBSITE FUNCTIONALITY INCLUDING CHATBOT ===
         // ========================================================
+
+        // === VIDEO HANDLING FUNCTIONALITY ===
+        function initVideoPlayer() {
+            const video = document.querySelector('.video-player');
+            const videoLoading = document.getElementById('videoLoading');
+            const videoFallback = document.getElementById('videoFallback');
+            
+            if (video) {
+                // Show loading indicator
+                videoLoading.style.display = 'block';
+                
+                // Video error handling
+                video.onerror = function() {
+                    videoLoading.style.display = 'none';
+                    videoFallback.style.display = 'block';
+                    console.log('Video failed to load. Check the path: /vidz/bbmi-vid1.mp4');
+                };
+                
+                // Video loaded successfully
+                video.onloadeddata = function() {
+                    videoLoading.style.display = 'none';
+                    console.log('Video loaded successfully');
+                };
+                
+                // Video waiting/buffering
+                video.onwaiting = function() {
+                    videoLoading.style.display = 'block';
+                };
+                
+                // Video can play
+                video.oncanplay = function() {
+                    videoLoading.style.display = 'none';
+                };
+                
+                // Try to load the video
+                video.load();
+            }
+        }
 
         // === ENHANCED VALIDATION FUNCTIONS ===
         const kenyanCarrierPrefixes = {
@@ -4942,6 +5137,9 @@ function setupMobileTouchEvents() {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize video player
+    initVideoPlayer();
+    
     // Mobile menu functionality
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navMenu = document.getElementById('navMenu');
